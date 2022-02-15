@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <title>Himster | Shop </title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta name="description" content="This is the official store of Himster Tech, where the customers can buy all the available products from Himster and get the official customer service. The products ...">
+  
+  <meta name="author" content="Himster.in">
+  <!-- Mobile Specific Meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  
+  <!-- Revolution Slider -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/font-awesome/css/font-awesome.css">
+
+  <!-- REVOLUTION STYLE SHEETS -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/settings.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/layers.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/navigation.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+<style>
+	.product-item .product-thumb .preview-meta li form button{
+		margin: 0px;
+    	padding: 0px;
+    	background: transparent;
+    	border: 0px;
+    }
+</style>
+</head>
+
+<body id="body">
+
+<!-- Start Top Header Bar -->
+
+<%- include('partials/header') %>
+
+<section class="page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="content">
+					<h1 class="page-name">Shop</h1>
+					<ol class="breadcrumb">
+						<li><a href="/">Home</a></li>
+						<li class="active">shop</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="products section">
+	<div class="container">
+		<div class="row">
+<% if(shopproducts.length > 0){ %>
+			<% for(i in shopproducts){ %>
+			<div class="col-md-4">
+				<div class="product-item autoheight">
+					<div class="product-thumb">
+						<!-- <span class="bage">Sale</span> -->
+						<img class="img-responsive" src="<%= (shopproducts[i].prod_img1).slice(7) %>" alt="product-img" />
+						<div class="preview-meta">
+							<ul>
+								<li>
+									<!-- <span  data-toggle="modal" data-target="#<%= shopproducts[i].prod_title %>"> -->
+										<a href="/products/<%= shopproducts[i].prod_title %>">
+										<i class="tf-ion-ios-search-strong"></i>
+										</a>
+									<!-- </span> -->
+								</li>
+								<li>
+
+									<% if(authentication){ %>
+									<form method="POST" action="/wishlist">
+									<input type="hidden" name="userId" value="<%= usr._id %>">	
+									<input type="hidden" name="productId" value="<%= shopproducts[i]._id %>">
+									<input type="hidden" name="name" value="<%= shopproducts[i].prod_title %>">
+									<input type="hidden" name="desc" value="<%= shopproducts[i].prod_desc %>">
+									<input type="hidden" name="img" value="<%= (shopproducts[i].prod_img1).slice(7) %>">
+									<input type="hidden" name="price" value="<%= shopproducts[i].prod_discountedprice %>">
+									<button type="submit"><a><i class="tf-ion-ios-heart"></i></a></button>
+									</form>
+									<% }else{ %>
+									<a href="/login"><i class="tf-ion-ios-heart"></i></a>
+									<% } %>
+			                        
+								</li>
+								<li>
+									<% if(authentication){ %>
+
+										<% if(shopproducts[i].instock){ %>
+									<form method="POST" action="/cart">
+									<input type="hidden" name="userId" value="<%= usr._id %>">	
+									<input type="hidden" name="productId" value="<%= shopproducts[i]._id %>">
+									<input type="hidden" name="quantity" value="1">
+									<input type="hidden" name="name" value="<%= shopproducts[i].prod_title %>">
+									<input type="hidden" name="desc" value="<%= shopproducts[i].prod_desc %>">
+									<input type="hidden" name="img" value="<%= (shopproducts[i].prod_img1).slice(7) %>">
+									<input type="hidden" name="price" value="<%= shopproducts[i].prod_discountedprice %>">
+									<button type="submit"><a><i class="tf-ion-android-cart"></i></a></button>
+									</form>
+
+									<% }else{ %>
+									<button type="button"><a><i class="tf-ion-android-cart"></i></a></button>
+
+									<% } %>
+
+									<% }else{ %>
+									<a href="/login"><i class="tf-ion-android-cart"></i></a>
+									<% } %>
+								</li>
+							</ul>
+                      	</div>
+					</div>
+					<div class="product-content">
+						<h4><a href="/products/<%= shopproducts[i].prod_title %>"><%= shopproducts[i].prod_title %></a></h4>
+						<p class="price">₹ <%= shopproducts[i].prod_discountedprice %></p>
+					</div>
+				</div>
+			</div>
+			
+		<!-- Modal -->
+		<div class="modal product-modal fade" id="<%= shopproducts[i].prod_title %>">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<i class="tf-ion-close"></i>
+			</button>
+		  	<div class="modal-dialog " role="document">
+		    	<div class="modal-content">
+			      	<div class="modal-body">
+			        	<div class="row">
+			        		<div class="col-md-8 col-sm-6 col-xs-12">
+			        			<div class="modal-image">
+				        			<img class="img-responsive" src="<%= (shopproducts[i].prod_img1).slice(7) %>" alt="product-img" />
+			        			</div>
+			        		</div>
+			        		<div class="col-md-4 col-sm-6 col-xs-12">
+			        			<div class="product-short-details">
+			        				<h2 class="product-title"><%= shopproducts[i].prod_title %></h2>
+			        				<p class="product-price">₹ <%= shopproducts[i].prod_discountedprice %></p>
+			        				<p class="product-short-description">
+			        					<%= shopproducts[i].prod_desc %>
+			        				</p>
+			        				<form method="POST" action="/cart">
+									<input type="hidden" name="userId" value="<%= usr._id %>">	
+									<input type="hidden" name="productId" value="<%= shopproducts[i]._id %>">
+									<input type="hidden" name="quantity" value="1">
+									<input type="hidden" name="name" value="<%= shopproducts[i].prod_title %>">
+									<input type="hidden" name="desc" value="<%= shopproducts[i].prod_desc %>">
+									<input type="hidden" name="img" value="<%= (shopproducts[i].prod_img1).slice(7) %>">
+									<input type="hidden" name="price" value="<%= shopproducts[i].prod_discountedprice %>">
+									<button type="submit" class="btn btn-main">Add To Cart</button>
+									</form>
+<!-- 			        				<a href="/cart" class="btn btn-main">Add To Cart</a> -->
+			        				<a href="/products/<%= shopproducts[i].prod_title %>" class="btn btn-transparent">View Product Details</a>
+			        			</div>
+			        		</div>
+			        	</div>
+			        </div>
+		    	</div>
+		  	</div>
+		</div><!-- /.modal -->
+		<% } %>
+
+<% }else{ %>
+Currently...No products are available!!!
+<% } %>
+		</div>
+	</div>
+</section>
+
+<%- include('partials/footer') %>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
+     <script>
+       $(function() {
+        $('.autoheight').matchHeight();
+       });
+     </script>
+  </body>
+  </html>

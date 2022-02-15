@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+<head>
+  
+  <title>Himster | Your Profile </title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta name="description" content="This is the official store of Himster Tech, where the customers can buy all the available products from Himster and get the official customer service. The products ...">
+  
+  <meta name="author" content="Himster.in">
+  <!-- Mobile Specific Meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  
+  <!-- Revolution Slider -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/font-awesome/css/font-awesome.css">
+
+  <!-- REVOLUTION STYLE SHEETS -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/settings.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/layers.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/navigation.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function () {
+	    // Handler for .ready() called.
+	    $('html, body').animate({
+	        scrollTop: $('#scroll').offset().top
+	    }, 'slow');
+	});
+
+	</script>
+  
+</head>
+
+<body id="body">
+<!-- Start Top Header Bar -->
+<%- include('partials/header') %>
+
+<section class="page-header">
+	<div class="container" id="scroll">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="content">
+					<h1 class="page-name">Dashboard</h1>
+					<ol class="breadcrumb">
+						<li><a href="/">Home</a></li>
+						<li class="active">My Account</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+ <% if(smsg.length != 0){ %>
+ <div class="alert alert-success alert-dismissible">
+   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong><%= smsg %></strong> 
+  </div>
+   <% } %>
+
+
+
+
+<section class="user-dashboard page-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="list-inline dashboard-menu text-center">
+          <li><a class="active"  href="/profile-details">Profile</a></li>
+          <li><a href="/address">Address</a></li>
+          <li><a href="/order">Orders</a></li>
+          <li><a href="/wishlist">Wishlist</a></li>
+          
+        </ul>
+        <div class="dashboard-wrapper dashboard-user-profile">
+          <div class="media">
+            <div class="pull-left text-center" href="#">
+              <% if(usr.image){ %>
+              <img class="media-object user-img" src="<%= usr.image %>" alt="Image">
+              <% }else if(usr.profile){ %>
+              <img class="media-object user-img" src="<%= usr.profile %>" alt="Image">
+              <% }else{ %>
+              <img class="media-object user-img" src="images/avatar.jpg" alt="Image">
+              <% } %>
+
+
+              <% if(!usr.image){ %>
+              <form method="POST" action="/profile" enctype="multipart/form-data">
+               
+ <input type="file" id="product" name="myimage"  required="true" />
+ <input type="hidden" name="profile" value="<%= usr._id %>">
+                
+              <button type="submit" class="btn btn-transparent mt-20">Change Image</button>
+            </form>
+              <% } %>
+            </div>
+            <div class="media-body">
+              <ul class="user-profile-list">
+                <li><span>Full Name:</span><%= usr.fullname %></li>
+                <!-- <li><span>Country:</span>USA</li> -->
+
+                <% if(usr.username){ %>
+                <li><span>Email:</span><%= usr.username %></li>
+                <% } %>
+
+                <% if(!usr.username && usr.email){ %>
+                <li><span>Email:</span><%= usr.email %></li>
+                <% } %>
+
+                <% if(usr.phone){ %>
+                <li><span>Phone:</span><%= usr.phone %></li>
+                <% } %>
+
+<!-- 
+                <% if(usr.DOB){ %>
+                <li><span>Date of Birth:</span>Dec , 22 ,1991</li>
+                <% } %> -->
+
+                <% if(usr.address){ %>
+                <li><span>Address:</span>
+                <%= usr.address  %>,<%= usr.town  %>,<%= usr.city %>-<%= usr.pincode  %>,<%= usr.state %></li>
+                <% } %>
+
+                <li><a href="/update-profile" class="btn btn-main btn-medium">Update Profile</a></li>
+                <% if(!usr.image){ %>
+
+                <%  if(usr.email){ %>
+      <%  if(usr.email == 'storehimster@gmail.com'){ %>
+                      <li><a href="/admin/myproducts" class="btn btn-main btn-medium">Admin Panel >>></a></li>
+                    <% } %>
+                    <% } %>
+
+
+                <li><a href="/reset-password" class="btn btn-main btn-medium">Change Password</a></li>
+                <% } %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>
+    
+  </body>
+  </html>

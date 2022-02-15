@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+<head>
+
+<title>Himster | Cart </title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="description" content="This is the official store of Himster Tech, where the customers can buy all the available products from Himster and get the official customer service. The products ...">
+  
+  <meta name="author" content="Himster.in">
+  <!-- Mobile Specific Meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  
+  <!-- Revolution Slider -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/font-awesome/css/font-awesome.css">
+
+  <!-- REVOLUTION STYLE SHEETS -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/settings.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/layers.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/navigation.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+<style>
+  
+    #qntyinpt{
+      height: 49px;
+  max-width: 4rem;
+  margin: 0;
+  padding: 0.75rem 0;
+  text-align: center;
+  border-top: 1px solid grey;
+  border-left: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-right: 0;
+}
+
+.quantity-selectors-container {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+}
+
+.quantity-selectors {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.quantity-selectors button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  border-radius: 0;
+  border: 1px solid grey;
+  background-color: #fff;
+  color: grey;
+}
+
+.quantity-selectors button:first-child {
+  border-bottom: 0;
+}
+
+.quantity-selectors button:hover {
+  cursor: pointer;
+}
+
+.quantity-selectors button[disabled="disabled"] {
+  cursor: not-allowed;
+}
+
+.quantity-selectors button[disabled="disabled"] span {
+  opacity: 0.5;
+}
+
+button .product-remove{
+  font-weight: bold;
+  opacity: 0.75;
+  
+}
+button .product-remove:hover{
+  opacity: 1;
+}
+
+
+#deskHeading {
+  display: block;
+}
+.hid{
+  display: none;
+}
+#trashbtn{display: block}
+#trashbtnmob{display: none;}
+
+@media only screen and (max-width: 768px) {
+    #deskHeading{
+      display: none;
+    }
+    .hid{display: block;}
+    .page-wrapper {padding: 0px 0px 40px 0px;}
+}
+@media only screen and (max-width: 408px) {
+  .col-xs-7,.col-xs-5{padding-left: 5px;padding-right: 5px;}  
+  #trashbtn{display: none;}
+  #trashbtnmob{display: block;margin-top: 30px;}
+    .row .text-center #cartimg {
+        height: auto;
+        vertical-align: middle;
+        width: 100%;
+    }   
+    .pull-left {
+      float: right!important;
+    }
+}
+@media only screen and (max-width: 308px) {
+  .w-auto{
+    width: auto!important;
+  }
+
+}  
+  </style>
+
+</head>
+
+<body id="body">
+
+<!-- Start Top Header Bar -->
+<%- include('partials/header') %>
+<!-- Main Menu Section -->
+
+<section class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="content">
+          <h1 class="page-name">Cart</h1>
+          <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">Cart</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<% if( addcart.length != 0){ %>
+ <div class="alert alert-success alert-dismissible">
+   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong><%= addcart %></strong>
+  </div>
+   <% } %>
+
+   <% if( delcart.length != 0){ %>
+ <div class="alert alert-danger alert-dismissible">
+   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong><%= delcart %></strong>
+  </div>
+   <% } %>
+
+<div class="page-wrapper">
+  <div class="cart shopping">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="block">
+            <div class="product-list">
+              <% if(foundcart.length > 0){  %> 
+                <div class="row" id="deskHeading">
+                  <div class="col-lg-3 col-md-4 col-sm-4 col-lg-offset-9 col-md-offset-8  col-sm-offset-8">
+                    <div class="col-lg-4 col-md-3 col-sm-3">
+                      <label for="">Price</label>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                      <label for="">Quantity</label>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-sm-3">
+                      <label for="">Total</label>
+                    </div>  
+                  </div>
+                </div>
+                <hr>
+              <!--  SECOND PRODUCT DIV -->
+                
+        <% for(i in foundcart){  %>
+              <div class="row mt-30">
+                  <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
+                    <div class="col-lg-3 col-md-4 col-sm-5 col-xs-5 text-center">
+                      <img id="cartimg" width="150" height="150" src="<%= foundcart[i].img %>" alt="<%= foundcart[i].name %>" />
+                       <form method="POST" action="/deletecart" id="trashbtnmob">
+                          <input type="hidden" name="productId" value="<%= foundcart[i]._id %>">
+                      
+                          <input type="hidden" name="userId" value="<%= usr._id %>">
+                        <button type="submit" class="product-remove" style="background: transparent;border: 0px;"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                      </form>
+
+                    </div>
+                    <div class="col-lg-6 col-md-8 col-sm-7 col-xs-7">
+                      <b><a href="/products/<%= foundcart[i].name %>"><%= foundcart[i].name %></a></b>
+                      <p class="limittext">
+                      <%= foundcart[i].desc %>
+                      </p>
+                      <br><br>
+                        <!-- <a class="product-remove" href="">Remove</a> -->
+                          <form method="POST" action="/deletecart" id="trashbtn">
+                            <input type="hidden" name="productId" value="<%= foundcart[i]._id %>">
+                        
+                            <input type="hidden" name="userId" value="<%= usr._id %>">
+                          <button type="submit" class="product-remove" style="background: transparent;border: 0px;"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-4 w-auto">
+                    <label for="" class="hid">Price</label> <br>₹ <%= foundcart[i].price %>
+                  </div>
+                  <div class="col-lg-1 col-md-2 col-sm-2 col-xs-4 w-auto">
+                    <label for="" class="hid">Quantity</label> <br>
+                    <div class="product-quantity">
+                <input data-min="1" data-max="0" type="text" name="quantity" value="<%= foundcart[i].quantity %>" readonly="true" id="qntyinpt"><div class="quantity-selectors-container">
+                  <div class="quantity-selectors">
+
+                    <form method="POST" action="/cart">
+                  <input type="hidden" name="userId" value="<%= usr._id %>">  
+                  <input type="hidden" name="productId" value="<%= foundcart[i].productId %>">
+                 
+                  <button type="submit" aria-label="Add one"><span>&#43;</span></button>
+                  </form>
+
+
+                   <form method="POST" action="/subone">
+                  <input type="hidden" name="userId" value="<%= usr._id %>">  
+                  <input type="hidden" name="productId" value="<%= foundcart[i].productId %>">
+                 <% if(foundcart[i].quantity > 1){ %>
+  <button type="submit" aria-label="Subtract one"><span>&#8722;</span></button>
+                  </form>
+                  
+                 <% }else{ %>
+                    <button type="submit" aria-label="Subtract one" disabled="disabled"><span>&#8722;</span></button>
+                  </form>
+                  <% } %>
+
+
+                  </div>
+                </div>
+              </div>  
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-4 w-auto">
+                    <label for="" class="hid">Total</label> <br>₹ <%= foundcart[i].ttlprice %>
+                  </div>  
+                  
+                </div>
+
+            <% } %>
+<% }else{ %>
+
+<section class="empty-cart page-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="block text-center">
+          <i class="tf-ion-ios-cart-outline"></i>
+            <h2 class="text-center">Your cart is currently empty.</h2>
+            <p>Add some products to your cart.</p>
+            <a href="/shop" class="btn btn-main mt-20">Return to shop</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% } %>
+                <!-- =============== END PRODUCTS===================-->
+              <% if(foundcart.length > 0){  %>
+              <% let ttl =0 ;%>
+                <hr>
+                <div class="row">
+                  <div class="col-lg-3 col-md-4 col-sm-4 col-lg-offset-9 col-md-offset-8  col-sm-offset-8">
+                    <div class="col-md-8 col-sm-8 col-xs-8 w-auto">
+                      <label for="">Sub Total</label>
+                    </div>
+                      <% for(i in foundcart){  %>
+                      <% ttl = ttl + foundcart[i].ttlprice %>
+                      <% } %>
+                    <div class="col-md-4 col-sm-4 col-xs-4 w-auto">
+                      ₹ <%= ttl %>
+                    </div>
+
+                  </div>  
+                </div>
+               
+                <a href="/checkout/<%= usr._id %>" class="btn btn-main pull-right mt-20">Checkout</a>
+                <a href="/shop" class="btn btn-main pull-left mt-20">Continue Shopping</a>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+    <script>
+      $(".increment-quantity,.decrement-quantity").on("click", function(ev) {
+  var currentQty = $('input[name="quantity"]').val();
+  var qtyDirection = $(this).data("direction");
+  var newQty = 0;
+  
+  if (qtyDirection == "1") {
+    newQty = parseInt(currentQty) + 1;
+  }
+  else if (qtyDirection == "-1") {
+    newQty = parseInt(currentQty) - 1;
+  }
+
+  // make decrement disabled at 1
+  if (newQty == 1) {
+    $(".decrement-quantity").attr("disabled", "disabled");
+  }
+  
+  // remove disabled attribute on subtract
+  if (newQty > 1) {
+    $(".decrement-quantity").removeAttr("disabled");
+  }
+  
+  if (newQty > 0) {
+    newQty = newQty.toString();
+    $('input[name="quantity"]').val(newQty);
+  }
+  else {
+    $('input[name="quantity"]').val("1");
+  }
+});
+    </script>
+
+
+  </body>
+  </html>

@@ -1,0 +1,111 @@
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Himster | New Orders</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+</head>
+<body>
+
+
+
+
+
+<div class="container">
+<center> <h3>All New Orders:</h3></center> 
+
+<br>
+<center>
+<form action="/adminorders" method="POST">
+  <input type="text" name="orderid">
+  <button type="submit">Search For User and Order details</button>
+</center> 
+<br>
+
+</form>
+            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+      	<th>SR No.</th>
+        <th>Order Status</th>
+        <th>CURRENCY</th>
+        <th>GATEWAYNAME</th>
+        <th>RESPMSG</th>
+        <th>BANKNAME</th>
+
+        <th>PAYMENTMODE</th>
+        <th>MID</th>
+        <th>RESPCODE</th>
+        <th>TXNID</th>
+        <th>TXNAMOUNT</th>
+
+        <th>ORDERID</th>
+        <th>STATUS</th>
+        <th>BANKTXNID</th>
+        <th>TXNDATE</th>
+      
+        
+        
+      </tr>
+    </thead>
+    <tbody>
+
+ <%  for(i in mdata){ %>
+<% if(!(mdata[i].orderComplete) && !(mdata[i].orderCancelled)){ %>
+
+ <tr>
+      	<td><%= (Number(i)+1) %></td>
+
+<td>
+    <form action="/ordercompleted" method="POST">
+      <input type="radio" name="ordercompleted" value="<%= mdata[i].orderid %>" 
+      onchange="this.form.submit()">
+    <span>Delivered</span>
+    </form>
+
+    <form action="/ordercancelled" method="POST">
+      <input type="radio" name="ordercancelled" value="<%= mdata[i].orderid %>" 
+      onchange="this.form.submit()">
+    <span>Cancelled</span>
+    </form>
+
+  </td>
+        <td><%= mdata[i].currency %></td>
+        <td><%= mdata[i].gatewayname %></td>
+        <td><%= mdata[i].respmsg %></td>
+        <td><%= mdata[i].bankname %></td>
+        <td><%= mdata[i].paymentmode %></td>
+        <td><%= mdata[i].mid %></td>
+        <td><%= mdata[i].respcode %></td>
+        <td><%= mdata[i].txnid %></td>
+        <td>₹<%= mdata[i].txnamount %></td>
+        <td><%= mdata[i].orderid %></td>
+        <td><%= mdata[i].status %></td>
+        <td><%= mdata[i].banktxnid %></td>
+        <td><%= mdata[i].txndate %></td>
+
+        
+        
+        
+      </tr>
+      <% } %>
+ <% } %>
+
+    </tbody>
+  </table>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+<head>
+
+  <title>Himster | Order Details </title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="description" content="This is the official store of Himster Tech, where the customers can buy all the available products from Himster and get the official customer service. The products ...">
+  
+  <meta name="author" content="Himster.in">
+  <!-- Mobile Specific Meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  
+  <!-- Revolution Slider -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/font-awesome/css/font-awesome.css">
+
+  <!-- REVOLUTION STYLE SHEETS -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/settings.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/layers.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/navigation.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+<style>
+	
+
+	.contact-number ul .dropdown-menu{right: auto}
+
+	.contact-number ul .dropdown-menu li a {
+    color: #222;
+    font-size: 12px;
+    border: 1px solid transparent;
+    display: block;
+    padding: 8px 16px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: .3s all;
+	}
+	/*p{color:black;}*/
+
+	.contact-number ul .dropdown-menu>li>a {
+    display: block;
+    /*padding: 3px 20px;*/
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+	}
+
+	.contact-number ul .dropdown-menu li a:hover {
+    background-color: #000;
+    color: #fff;
+	}
+
+	.dropdown-menu .divider {
+    margin: 4px 0;
+	}
+
+	.footer .footer-menu li {
+		display: block;
+	}
+	.footer .footer-menu li a:hover {
+		color:black;
+	}
+	.footer .footer-menu li a{
+	color:#6d6d6dc4;
+	font-weight:bold;
+	font-size: 14px; 
+	}
+	.col-lg-12{float: none;}
+
+/*====================================================DDDDDDDDDDD*/
+	.single-product-details .color-swatches span {
+    		width: auto;
+    		margin-right: 10px;
+		}
+		.single-product-details .color-swatches a {
+			border-radius: 50px;
+			display: inline-block;
+		    width: 25px;
+		    height: 25px;
+		    margin-right: 5px;
+		    border-radius: 50px;
+		}
+		.givrating{
+			color:blue;
+			text-transform: uppercase;
+			font-weight: bold;
+			margin-top: 10px;
+		}
+		.status{
+			display: inline-block;
+		    width: 13px;
+		    height: 13px;
+		    margin-right: 5px;
+		    border-radius: 50px;
+		}
+		
+		.delivered{
+			background-color: green;
+		}
+		.pending{
+			background-color: orange;
+		}
+		.cancelled{
+			background-color: red;
+		}
+		.desc div{
+		 margin:10px 0px;
+	    }
+	
+	
+
+	.borderrow{
+		border:1px solid #dedede;
+		padding: 15px 5px;
+	}
+	@media only screen and (max-width: 400px){
+		.mob1 {float: left;width: 50%}
+		.mob2{float: right;width: 50%}
+		.brdr{width: 90%;margin: auto;}
+		.col-xs-7,.col-xs-5{padding-left: 5px;padding-right: 5px;}	
+		#prodimg {
+		    height: 100px;
+		    vertical-align: middle;
+		    width: auto;
+		}	
+		.borderrow{
+			border: 0px;
+		}
+		.borderlist{
+		border:1px solid #dedede;
+		padding: 15px 5px;
+		text-align: left;
+		}
+
+	}
+	
+/*====================================================DDDDDDDDDDD*/		
+
+
+
+
+	 @media only screen and (max-width: 400px){
+    .btn-main {padding: 14px 8px;}
+	}
+	@media (max-width: 992px){
+	.container {
+    width: 90%;
+    margin: auto;
+	}
+}
+</style>	
+
+</head>
+
+<body id="body">
+
+<%- include('partials/header') %>
+
+<section class="page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="content">
+					<h1 class="page-name">Order Details</h1>
+					<ol class="breadcrumb">
+						<li><a href="/">Home</a></li>
+						<li><a href="/profile-details">My Account</a></li>
+						<li><a href="/order">My Orders</a></li>
+						<li class="active">Order Details</li>
+
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<div class="page-wrapper">
+  <div class="cart shopping">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="block">
+            <div class="product-list">
+             
+              	<div class="row">
+              		<% for(i in item){ %>
+              	
+              			<% if(item[i]._id == orderidd){ %>
+              		<div class="col-lg-6 col-md-6 col-sm-8">
+
+              			<div class="col-lg-12 col-md-12 col-sm-12">
+              				<label for="">
+
+              			
+                              <% var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; %>
+                   
+                               <% let ordrdt = ((item[i].orderdate).split(" "))[0].split("-") %>
+                               <label>Ordered on <%= ordrdt[2] %>
+                                <%= months[Number(ordrdt[1])-1] %> 
+                                <%= ordrdt[0] %>
+
+                              	</label>
+                              
+
+
+              			
+              				&nbsp; | &nbsp;
+              				<label for="">Order Id <%= item[i]._id %></label>
+              			</div>	
+              		</div>
+              	</div>
+              	
+              	<div class="row borderrow">
+              		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-5 brdr">
+              			<label for="">Shipping Address</label>
+              			<ol class="borderlist">
+              				<li><strong><%= usr.firstname %> <%= usr.lastname %></strong></li>
+	              			<li><%= usr.address %></li>
+	              			<li><%= usr.town %></li>
+	              			<li><%= usr.district %>,<%= usr.town %>,<%= usr.pincode %></li>
+	              			<li><%= usr.state %></li>
+              			</ol>
+              			
+              		</div>
+              		<div class="col-lg-6 col-md-6 col-sm-3 col-xs-7 brdr">
+              			<label for="">Payment Method</label> 
+              			<ol class="borderlist">
+              				<li><!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQTSjfhHBudUGtzj9c7FHvg5Io2qNYnbH7tOg&usqp=CAU" alt="visa" width="30" height="25">
+							**** **** **** *456 <br> -->
+							<%= item[i].paymentmethod %>
+              				</li>
+              			</ol>
+              			
+              		</div>
+              		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 mt-20 mob1">
+              			<label for="">Order Summary</label> 
+              			<ol>
+              				<li>Item(s) Subtotal:</li>
+              				<li>Shipping:</li>
+              				<li>Total:</li>
+              				<li><strong>Grand Total:</strong></li>
+              			</ol>
+              			
+              		</div>
+              		<div class="col-lg-1 col-md-1 col-sm-2 col-xs-3 mt-20 mob2">
+              			<label for="">&nbsp;</label>
+              			<ol>
+              				<li>₹<%= item[i].total %>.00</li>
+              				<li>₹00.00</li>
+              				<li>₹<%= item[i].total %>.00</li>
+              				<li><strong>₹<%= item[i].total %>.00</strong></li>
+
+              			</ol> 
+              		</div>	
+              		
+              	</div>
+
+
+              <!-- PRODUCT INFO DIV -->
+				
+              <div class="row mt-30" style="border:1px solid #dedede;padding: 15px;" >
+              	<% for(j in item[i].items){ %>
+              		<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
+				              			<div class="col-lg-3 col-md-4 col-sm-5 col-xs-5">
+				              				<a><img id="prodimg" width="150" height="150" src="<%= item[i].items[j].img %>" alt="" /></a>
+				              			</div>
+				              			<div class="col-lg-6 col-md-8 col-sm-7 col-xs-7 single-product-details">
+											<a><%= item[i].items[j].name %></a>
+											<br><br>
+											<div class="color-swatches">
+												<span>color:</span>
+												<ul>
+													<li>
+														<a class="swatch-black"></a>
+													</li>
+												</ul>
+											</div>	
+				              			</div>
+				              		</div>
+
+<% } %>
+
+				              		<div class="col-lg-1 col-md-1 col-sm-1 col-xs-4 mt-20">
+				              			<label for="" class="hid">Price</label> <br>₹<%= item[i].total  %>
+				              		</div>
+
+				              		<div class="col-lg-2 col-md-3 col-sm-3 col-xs-8 mt-20 desc">
+
+
+				              			 <% if(item[i].orderComplete == false && item[i].orderCancelled == false){ %>
+  
+                      					<div>
+											<a class="status delivered"></a>
+											<b>Status:- </b><span>Shipped ,On the way!!!</span>	
+										</div>
+										
+                      <% } %>
+                      <% if(item[i].orderComplete == true){ %>
+  
+
+                     
+
+										<div>
+											<a class="status delivered"></a>
+											<b>Status: </b><span>Delivered</span>	
+										</div>
+										<div>
+											<span> Return window will close after 5 days.</span>
+										</div>
+										<div>
+											               <% if(usr.email){ %>
+                        <form action="/prod_ratings" method="POST">
+
+          <input type="hidden" name="img" value="<%= item[i].items[j].img %>">
+          <input type="hidden" name="name" value="<%= item[i].items[j].name %>">
+          <input type="hidden" name="desc" value="<%= item[i].items[j].desc %>">
+          <input type="hidden" name="total" value="<%= item[i].total %>">
+          <input type="hidden" name="fullname" value="<%= usr.fullname %>">
+          <input type="hidden" name="email" value="<%= usr.email %>">
+        
+
+        
+                              <button type="submit" class="givrating"><i class="tf-ion-ios-star"></i> Rate & Review Product</button>
+                        </form>
+
+<% }else{ %>
+<a href="/update-profile" class="givrating"><i class="tf-ion-ios-star"></i> Rate & Review Product</a>
+<% } %>
+
+ <% } %>
+
+
+                      <% if(item[i].orderCancelled == true){ %>
+
+
+                      					<div>
+											<a class="status delivered"></a>
+											<b>Status:- </b><span>Cancelled</span>	
+										</div>
+  
+                      <% } %>
+
+				              			</div>
+				              		</div>	
+
+
+
+
+				              		
+              		
+              	</div>
+
+              	<!-- =============== END PRODUCTS===================-->
+
+              	<% } %>
+              <% } %>
+               
+
+
+                <!-- <a href="checkout.html" class="btn btn-main pull-right mt-20">Checkout</a> -->
+                <a href="/shop" class="btn btn-main pull-left mt-20">Continue Shopping</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%- include('partials/footer') %>
+  </body>
+  </html>

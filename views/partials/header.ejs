@@ -1,0 +1,321 @@
+
+
+<!-- Start Top Header Bar -->
+<section class="top-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-xs-12 col-sm-3 hidden-xs">
+				<div class="logo">
+					<a href="/">
+						<!-- replace logo here -->
+						<img src="images\logo.png" alt="" width="150" height="30">
+					</a>
+				</div>
+
+				<div class="contact-number pdt-20">
+			      	<ul class="top-menu list-inline">
+						<li class="dropdown dropdown-slide">
+						<% if(authentication){ %>
+				            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false"> Hello, <%= usr.firstname %> <span class="tf-ion-ios-arrow-down"></span></a>
+				            <ul class="dropdown-menu">
+				             <%  if(usr.email){ %>
+      <%  if(usr.email == 'storehimster@gmail.com'){ %>
+                      <li><a href="/admin/myproducts">Admin Panel</a></li>
+                    <% } %>
+                    <% } %>
+								<li><a href="/profile-details">My Account</a></li>
+								<li><a href="/order">my orders</a></li>
+								<li><a href="/wishlist">wishlist</a></li>
+								<li><a href="/cart">cart</a></li>
+								<li><a href="/logout">Logout</a></li>	
+				            </ul>
+
+				            <% }else{ %>
+
+				            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false"> Hello, Guest <span class="tf-ion-ios-arrow-down"></span></a>
+				            <ul class="dropdown-menu">
+								<li><a href="/register">Register</a></li>
+								<li><a href="/login">Login</a></li>
+								
+				            </ul>
+
+				            <% } %>
+
+
+				            				        </li>
+			      	</ul>
+					
+				</div>
+			</div>
+			<div class="col-md-6 col-xs-12 col-sm-5 search hidden-xs" style="padding:0px!important">
+				<form>
+					<input type="search" class="form-control search-field" placeholder="Search..."><a><i class="tf-ion-ios-search-strong"></i></a>
+				</form> 
+				<div style="display:none" class="result-list search-results"></div>    
+			</div>
+			<div class="col-xs-12 visible-xs">
+				<div class="logo text-center">
+					<a href="/">
+						<!-- replace logo here -->
+						<img src="images\logo.png" alt="" width="150" height="30">
+					</a>
+				</div>
+			</div>	
+			<div class="col-md-3 col-xs-12 col-sm-4 pdt-20">
+				<!-- Cart -->
+				<ul class="top-menu text-right list-inline">
+	          <li class="dropdown cart-nav dropdown-slide">
+	          
+	         
+	            <a href="/cart"><i class="tf-ion-android-cart"></i>Cart</a>
+
+
+	          
+	          </li><!-- / Cart -->
+				<!-- Wishlist -->
+	          <li>
+	          
+	          	<a href="/wishlist"><i class="tf-ion-ios-heart"></i>Wishlist</a>
+	         
+	          </li>
+			 <!--  / Wishlist -->
+	          <!-- Search -->
+	          <li class="dropdown search dropdown-slide visible-xs">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i class="tf-ion-ios-search-strong"></i> Search</a>
+	            <ul class="dropdown-menu search-dropdown">
+	              <li><form><input type="search" class="form-control search-field1" placeholder="Search..."></form>
+	              <div style="display:none" class="result-list search-results1"></div>
+	              </li>
+	            </ul>	
+	          </li><!-- / Search -->
+
+	          	
+	        	</ul><!-- / .nav .navbar-nav .navbar-right -->
+			</div>
+		</div>
+	</div>
+</section><!-- End Top Header Bar -->
+
+
+<!-- Main Menu Section -->
+<section class="menu">
+	<nav class="navbar navigation">
+	    <div class="container">
+	      <div class="navbar-header">
+	      	<div class="menu-title col-xs-6 visible-xs">
+				<div class="contact-number">
+			      	<ul class="top-menu list-inline">
+						<li class="dropdown dropdown-slide">
+							<% if(authentication){ %>
+				            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false"> Hello, <%= usr.firstname %> <span class="tf-ion-ios-arrow-down"></span></a>
+				             <ul class="dropdown-menu">
+				              <%  if(usr.email){ %>
+      <%  if(usr.email == 'storehimster@gmail.com'){ %>
+                      <li><a href="/admin/myproducts">Admin Panel</a></li>
+                    <% } %>
+                    <% } %>
+								<li><a href="/profile-details">My Account</a></li>
+								<li><a href="/order">my orders</a></li>
+								<li><a href="/wishlist">wishlist</a></li>
+								<li><a href="/cart">cart</a></li>
+								<li><a href="/logout">Logout</a></li>	
+				            </ul>
+				            <% }else{ %>
+				            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false"> Hello, Guest <span class="tf-ion-ios-arrow-down"></span></a>
+				             <ul class="dropdown-menu">
+								<li><a href="/register">Register</a></li>
+								<li><a href="/login">Login</a></li>
+								
+				            </ul>
+				            <% } %>
+				           
+				        </li>
+			      	</ul>
+					
+				</div>
+			</div>
+	      	
+	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	          <span class="sr-only">Toggle navigation</span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	        </button>
+
+	      </div><!-- / .navbar-header -->
+
+	      <!-- Navbar Links -->
+	      <div id="navbar" class="navbar-collapse collapse text-center">
+	        <ul class="nav navbar-nav">
+
+	        	<!-- Home -->
+	          <li class="dropdown ">
+	            <a href="/">Home</a>
+	          </li>
+	          <!-- / Home -->
+
+	          <li class="dropdown full-width dropdown-slide">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">New <span class="tf-ion-ios-arrow-down"></span></a>
+	            <div class="dropdown-menu">
+	              	
+	              	<div class="row">
+
+		                <!-- Mega Menu -->
+		                <div class="col-sm-2 col-xs-12 col-sm-offset-4 text-center">
+		                	<a href="/products/Hohem iSteady X">
+			                	<img class="img-responsive" src="images\gimbal\isteadyx.png" alt="menu image" />
+		                	</a><br>
+		                	<b> <a href="/products/Hohem iSteady X">Hohem iSteady X</a></b>
+		                </div>
+		                <div class="col-sm-2 col-xs-12 text-center">
+		                	<a href="/products/Hohem iSteady Pro 3">
+			                	<img class="img-responsive" src="images\gimbal\isteady_pro3.png" alt="menu image" />
+		                	</a><br>
+		                	<b> <a href="/products/Hohem iSteady Pro 3">Hohem iSteady Pro 3</a></b>
+		                </div>
+		                
+		                <div class="col-sm-2 col-xs-12 text-center" style="margin-top: 0;padding-top:50px;">
+		                	<a href="/shop/New">New Arrivals!&nbsp;&nbsp;<span class="pe-7s-right-arrow" style="font-size: 20px;position: relative;top: 4px;"></span></a>
+		                </div>
+		                
+	              	</div>
+
+	              <!-- / .row -->
+	            </div><!-- / .dropdown-menu -->
+	          </li><!-- / Elements -->
+
+
+	          <!-- Elements -->
+	          <li class="dropdown full-width dropdown-slide">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Gimbal <span class="tf-ion-ios-arrow-down"></span></a>
+	            <div class="dropdown-menu">
+	              	
+	              	<div class="row">
+
+		                <!-- Introduction -->
+		               
+
+		                <!-- Contact -->
+		                <div class="col-sm-2 col-xs-12 text-center">
+		                	<a href="/products/Hohem iSteady Mobile+">
+			                	<img class="img-responsive" src="images\gimbal\isteady_mobile+.png" alt="menu image" />
+		                	</a> <br>
+		                	<b><a href="/products/Hohem iSteady Mobile+">Hohem iSteady Mobile+</a></b>
+		                </div>
+
+		                <!-- Utility -->
+		                <div class="col-sm-2 col-xs-12 text-center">
+		                	<a href="/products/Hohem iSteady Pro 3">
+			                	<img class="img-responsive" src="images\gimbal\isteady_pro3.png" alt="menu image" />
+		                	</a><br>
+		                	<b><a href="/products/Hohem iSteady Pro 3">Hohem iSteady Pro 3</a> </b>
+		                </div>
+
+		                <!-- Mega Menu -->
+		                <div class="col-sm-2 col-xs-12 text-center">
+		                	<a href="/products/Hohem iSteady Multi">
+			                	<img class="img-responsive" src="images\gimbal\isteady_mutli_1.png" alt="menu image" />
+		                	</a><br>
+		                	<b> <a href="/products/Hohem iSteady Multi">Hohem iSteady Multi</a></b>
+		                </div>
+		                <div class="col-sm-2 col-xs-12 text-center">
+		                	<a href="/products/Hohem iSteady Gear (Z Kit)">
+			                	<img class="img-responsive" src="images\gimbal\isteady_gear_Z_kit.png" alt="menu image" />
+		                	</a><br>
+		                	<b> <a href="/products/Hohem iSteady Gear (Z Kit)">Hohem iSteady Gear (Z-kit)</a></b>
+		                </div>
+		                <div class="col-sm-2 col-xs-12 text-center">
+		                	<a href="/products/Hohem iSteady X">
+			                	<img class="img-responsive" src="images\gimbal\isteadyx black (1).png" alt="menu image" />
+		                	</a><br>
+		                	<b><a href="/products/Hohem iSteady X">Hohem iSteady X</a> </b>
+		                </div>
+		                <div class="col-sm-2 col-xs-12 text-center gimbalpd">
+		                	<a href="/shop/Gimbal">Shop All Gimbals&nbsp;&nbsp;<span class="pe-7s-right-arrow" style="font-size: 20px;position: relative;top: 4px;"></span></a>
+		                </div>
+	              	</div>
+
+	              
+	              <!-- / .row -->
+	            </div><!-- / .dropdown-menu -->
+	          </li><!-- / Elements -->
+
+
+	          <!-- Pages -->
+	          <li class="dropdown dropdown-slide">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Accessories <span class="tf-ion-ios-arrow-down"></span></a>
+	            <div class="dropdown-menu">
+		                	<ul>
+								
+								<li><a href="/products/Smartphone Holder">Smart phone holder</a></li>
+								<li role="separator" class="divider"></li>
+								
+								<li><a href="/products/Tripod">tripod</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="/products/Mini Tripod">mini tripod</a></li>
+								<li role="separator" class="divider"></li>
+								
+								<li><a href="/shop/Accessories">shop all accessories&nbsp;&nbsp;<span class="pe-7s-right-arrow" style="font-size: 20px;position: relative;top: 4px;"></span></a></li>
+		                	</ul>
+		                <!-- </div> -->
+
+		                
+	            </div><!-- / .dropdown-menu -->
+	          </li><!-- / Pages -->
+	          	<li class="dropdown full-width dropdown-slide">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Our Products <span class="tf-ion-ios-arrow-down"></span></a>
+	            <div class="dropdown-menu">
+	              	
+	              	<div class="row">
+
+		                <!-- Mega Menu -->
+		                <div class="col-sm-2 col-xs-12 col-sm-offset-2 text-center">
+		                	<a href="/products/Hohem iSteady X">
+			                	<img class="img-responsive" src="images\gimbal\isteadyx.png" alt="menu image" />
+		                	</a><br>
+		                	<b> <a href="/products/Hohem iSteady X">Hohem iSteady X</a></b>
+		                </div>
+		                 <div class="col-sm-2 col-xs-12 text-center">
+		                	<a href="/products/Hohem iSteady Mobile+">
+			                	<img class="img-responsive" src="images\gimbal\isteady_mobile+.png" alt="menu image" />
+		                	</a> <br>
+		                	<b><a href="/products/Hohem iSteady Mobile+">Hohem iSteady Mobile+</a></b>
+		                </div>
+						<div class="col-sm-2 col-xs-12 text-center">
+		                	<a href="/products/Hohem iSteady Gear (Z Kit)">
+			                	<img class="img-responsive" src="images\gimbal\isteady_gear_Z_kit.png" alt="menu image" />
+		                	</a><br>
+		                	<b> <a href="/products/Hohem iSteady Gear (Z Kit)">iSteady Gear (Z-kit)</a></b>
+		                </div>
+		                
+		                <div class="col-sm-2 col-xs-12 text-center" style="margin-top: 0;padding-top:50px;">
+		                	<a href="/shop">View All Products&nbsp;&nbsp;<span class="pe-7s-right-arrow" style="font-size: 20px;position: relative;top: 4px;"></span></a>
+		                </div>
+		                
+	              	</div>
+
+	              <!-- / .row -->
+	            </div><!-- / .dropdown-menu -->
+	          </li><!-- / Elements -->
+
+
+	          <!-- Blog -->
+	          <li class="dropdown ">
+	            <a href="/blogs">Blog</a>
+	          </li>
+	          <!-- / Blog -->
+
+			<!-- Shop -->
+	          <li class="dropdown dropdown-slide">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">support<span class="tf-ion-ios-arrow-down"></span></a>
+	            <ul class="dropdown-menu">
+	             <li><a href="/FAQs">FAQs</a></li>
+	              <li><a href="/contact">contact us</a></li>
+	            </ul>
+	          </li><!-- / Blog -->
+	        </ul><!-- / .nav .navbar-nav -->
+
+	      	</div><!--/.navbar-collapse -->
+	    </div><!-- / .container -->
+	</nav>
+</section>

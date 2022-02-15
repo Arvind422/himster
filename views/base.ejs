@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="description" content="This is the official store of Himster Tech, where the customers can buy all the available products from Himster and get the official customer service. The products ...">
+  
+  <meta name="author" content="Himster.in">
+  <!-- Mobile Specific Meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  
+  <!-- Revolution Slider -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/font-awesome/css/font-awesome.css">
+
+  <!-- REVOLUTION STYLE SHEETS -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/settings.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/layers.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/navigation.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+<style>
+	/*================CUSTOM SCROLL FOR CART=================*/
+	
+	#style-4{
+		overflow:auto;
+		max-height: 200px;
+	}
+	
+	#style-4::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
+}
+
+/*================CUSTOM SCROLL FOR CART=================*/
+
+	.contact-number ul .dropdown-menu{right: auto}
+
+	.contact-number ul .dropdown-menu li a {
+    color: #222;
+    font-size: 12px;
+    border: 1px solid transparent;
+    display: block;
+    padding: 8px 16px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: .3s all;
+	}
+
+	.contact-number ul .dropdown-menu>li>a {
+    display: block;
+    /*padding: 3px 20px;*/
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+	}
+
+	.contact-number ul .dropdown-menu li a:hover {
+    background-color: #000;
+    color: #fff;
+	}
+
+	.dropdown-menu .divider {
+    margin: 4px 0;
+	}
+
+	.footer .footer-menu li {
+		display: block;
+	}
+	.footer .footer-menu li a:hover {
+		color:black;
+	}
+	.footer .footer-menu li a{
+	color:#6d6d6dc4;
+	font-weight:bold;
+	font-size: 14px; 
+	}
+	.col-lg-12{float: none;}
+	.gimbalpd{padding-top: 80px;}
+
+@media only screen and (max-width: 768px){
+	.gimbalpd{padding-top: 20px;}
+	.menu-title{margin-top: 15px;}
+	.top-header .container {
+		padding-top: 15px;
+    padding-bottom: 15px;
+	}
+	.top-header .dropdown-menu {
+    right: auto;
+    left: auto;}
+}
+	 @media only screen and (max-width: 400px){
+    .btn-main {padding: 14px 8px;}
+	}
+	@media (max-width: 992px){
+	.container {
+    width: 100%;
+	}
+}
+</style>	
+
+</head>
+
+<body id="body">
+
+<!-- Start Top Header Bar -->
+<section class="top-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-xs-12 col-sm-3 hidden-xs">
+				<div class="contact-number">
+			      	<ul class="top-menu list-inline">
+						<li class="dropdown dropdown-slide">
+				            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false"> Hello, Arvind <span class="tf-ion-ios-arrow-down"></span></a>
+				            <ul class="dropdown-menu">
+								<li><a href="profile-details.html">My Account</a></li>
+								<li><a href="order.html">my orders</a></li>
+								<li><a href="wishlist.html">wishlist</a></li>
+								<li><a href="cart.html">cart</a></li>
+								<li><a href="#">Logout</a></li>	
+				            </ul>
+				        </li>
+			      	</ul>
+					
+				</div>
+			</div>
+			<div class="col-md-4 col-xs-12 col-sm-4">
+				<!-- Site Logo -->
+				<div class="logo text-center">
+					<a href="index.html">
+						<!-- replace logo here -->
+						<img src="images\logo.png" alt="" width="150" height="30">
+					</a>
+				</div>
+			</div>
+			<div class="col-md-4 col-xs-12 col-sm-5">
+				<!-- Cart -->
+				<ul class="top-menu text-right list-inline">
+	          <li class="dropdown cart-nav dropdown-slide">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i class="tf-ion-android-cart"></i>Cart</a>
+	            <div class="dropdown-menu cart-dropdown">
+
+	            	<!-- FOR ITEMS MORE THAN 2..ADD SCROLL -->
+					<div data-action='scroll' id="style-4">
+
+	            	<!-- Cart Item -->
+	            	<div class="media">
+	            		<a class="pull-left" href="#">
+	            			<img  class="media-object" src="images/shop/cart/cart-1.jpg" alt="image" />
+	            		</a>
+	            		<div class="media-body">
+	            			<h4 class="media-heading"><a href="">Ladies Bag</a></h4>
+	            			<div class="cart-price">
+                              <span>1 x</span>
+                              <span>1250.00</span>
+                            </div>
+                            <h5><strong>$1200</strong></h5>
+	            		</div>
+                        <a href="#" class="remove"><i class="tf-ion-close"></i></a>
+	            	</div><!-- / Cart Item -->
+
+	            	<!-- Cart Item -->
+	            	<div class="media">
+	            		<a class="pull-left" href="#">
+	            			<img  class="media-object" src="images/shop/cart/cart-2.jpg" alt="image" />
+	            		</a>
+	            		<div class="media-body">
+	            			<h4 class="media-heading"><a href="">Ladies Bag</a></h4>
+	            			<div class="cart-price">
+                              <span>1 x</span>
+                              <span>1250.00</span>
+                            </div>
+                            <h5><strong>$1200</strong></h5>
+	            		</div>
+                        <a href="#" class="remove"><i class="tf-ion-close"></i></a>
+	            	</div><!-- / Cart Item -->
+
+	            	<!-- Cart Item -->
+	            	<div class="media">
+	            		<a class="pull-left" href="#">
+	            			<img  class="media-object" src="images/shop/cart/cart-1.jpg" alt="image" />
+	            		</a>
+	            		<div class="media-body">
+	            			<h4 class="media-heading"><a href="">Ladies Bag</a></h4>
+	            			<div class="cart-price">
+                              <span>1 x</span>
+                              <span>1250.00</span>
+                            </div>
+                            <h5><strong>$1200</strong></h5>
+	            		</div>
+                        <a href="#" class="remove"><i class="tf-ion-close"></i></a>
+	            	</div><!-- / Cart Item -->
+
+	            	<!-- Cart Item -->
+	            	<div class="media">
+	            		<a class="pull-left" href="#">
+	            			<img  class="media-object" src="images/shop/cart/cart-2.jpg" alt="image" />
+	            		</a>
+	            		<div class="media-body">
+	            			<h4 class="media-heading"><a href="">Ladies Bag</a></h4>
+	            			<div class="cart-price">
+                              <span>1 x</span>
+                              <span>1250.00</span>
+                            </div>
+                            <h5><strong>$1200</strong></h5>
+	            		</div>
+                        <a href="#" class="remove"><i class="tf-ion-close"></i></a>
+	            	</div><!-- / Cart Item -->
+					</div>
+	            	
+	            	<div class="cart-summary">
+                        <span>Total</span>
+                        <span class="total-price">$1799.00</span>
+                    </div>
+                    <ul class="text-center cart-buttons">
+                    	<li><a href="cart.html" class="btn btn-small">View Cart</a></li>
+                    	<li><a href="checkout.html" class="btn btn-small btn-solid-border">Checkout</a></li>
+                    </ul>
+                </div>
+
+	          </li><!-- / Cart -->
+				<!-- Wishlist -->
+	          <li>
+	          	<a href="wishlist.html"><i class="tf-ion-ios-heart"></i>Wishlist</a>
+	          </li>
+			 <!--  / Wishlist -->
+	          <!-- Search -->
+	          <li class="dropdown search dropdown-slide">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i class="tf-ion-ios-search-strong"></i> Search</a>
+	            <ul class="dropdown-menu search-dropdown">
+	              <li><form action="post"><input type="search" class="form-control" placeholder="Search..."></form></li>
+	            </ul>
+	          </li><!-- / Search -->
+
+	          	
+	        	</ul><!-- / .nav .navbar-nav .navbar-right -->
+			</div>
+		</div>
+	</div>
+</section><!-- End Top Header Bar -->
+
+
+<!-- Main Menu Section -->
+<section class="menu">
+	<nav class="navbar navigation">
+	    <div class="container">
+	      <div class="navbar-header">
+	      	<div class="menu-title col-xs-6 visible-xs">
+				<div class="contact-number">
+			      	<ul class="top-menu list-inline">
+						<li class="dropdown dropdown-slide">
+				            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false"> Hello, Arvind <span class="tf-ion-ios-arrow-down"></span></a>
+				            <ul class="dropdown-menu">
+								<li><a href="profile-details.html">My Account</a></li>
+								<li><a href="order.html">my orders</a></li>
+								<li><a href="wishlist.html">wishlist</a></li>
+								<li><a href="cart.html">cart</a></li>
+								<li><a href="#">Logout</a></li>	
+				            </ul>
+				        </li>
+			      	</ul>
+					
+				</div>
+			</div>
+	      	
+	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	          <span class="sr-only">Toggle navigation</span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	        </button>
+
+	      </div><!-- / .navbar-header -->
+
+	      <!-- Navbar Links -->
+	      <div id="navbar" class="navbar-collapse collapse text-center">
+	        <ul class="nav navbar-nav">
+
+	          <li class="dropdown full-width dropdown-slide">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">New <span class="tf-ion-ios-arrow-down"></span></a>
+	            <div class="dropdown-menu">
+	              	
+	              	<div class="row">
+
+		                <!-- Mega Menu -->
+		                <div class="col-sm-2 col-xs-8 col-sm-offset-4 text-center">
+		                	<a href="product-single.html">
+			                	<img class="img-responsive" src="images\gimbal\isteadyx.png" alt="menu image" />
+		                	</a><br>
+		                	<b> <a href="product-single.html">iSteady X</a></b>
+		                </div>
+		                <div class="col-sm-2 col-xs-12 text-center">
+		                	<a href="product-single.html">
+			                	<img class="img-responsive" src="images\gimbal\isteady_pro3.png" alt="menu image" />
+		                	</a><br>
+		                	<b> <a href="product-single.html">iSteady Pro 3</a></b>
+		                </div>
+		                
+		                <div class="col-sm-2 col-xs-12 text-center" style="margin-top: 0;padding-top:50px;">
+		                	<a href="shopallaccessories.html">New Arrivals!&nbsp;&nbsp;<span class="pe-7s-right-arrow" style="font-size: 20px;position: relative;top: 4px;"></span></a>
+		                </div>
+		                
+	              	</div>
+
+	              <!-- / .row -->
+	            </div><!-- / .dropdown-menu -->
+	          </li><!-- / Elements -->
+
+
+	          <!-- Elements -->
+	          <li class="dropdown full-width dropdown-slide">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Gimbal <span class="tf-ion-ios-arrow-down"></span></a>
+	            <div class="dropdown-menu">
+	              	
+	              	<div class="row">
+
+		                <!-- Introduction -->
+		               
+
+		                <!-- Contact -->
+		                <div class="col-sm-2 col-xs-12 text-center">
+		                	<a href="product-single.html">
+			                	<img class="img-responsive" src="images\gimbal\isteady_mobile+.png" alt="menu image" />
+		                	</a> <br>
+		                	<b><a href="product-single.html">iSteady Mobile+</a></b>
+		                </div>
+
+		                <!-- Utility -->
+		                <div class="col-sm-2 col-xs-12 text-center">
+		                	<a href="product-single.html">
+			                	<img class="img-responsive" src="images\gimbal\isteady_pro3.png" alt="menu image" />
+		                	</a><br>
+		                	<b><a href="product-single.html">iSteady Pro 3</a> </b>
+		                </div>
+
+		                <!-- Mega Menu -->
+		                <div class="col-sm-2 col-xs-12 text-center">
+		                	<a href="product-single.html">
+			                	<img class="img-responsive" src="images\gimbal\isteady_mutli_1.png" alt="menu image" />
+		                	</a><br>
+		                	<b> <a href="product-single.html">iSteady Multi</a></b>
+		                </div>
+		                <div class="col-sm-2 col-xs-12 text-center">
+		                	<a href="product-single.html">
+			                	<img class="img-responsive" src="images\gimbal\isteady_gear_Z_kit.png" alt="menu image" />
+		                	</a><br>
+		                	<b> <a href="product-single.html">iSteady Gear (Z-kit)</a></b>
+		                </div>
+		                <div class="col-sm-2 col-xs-12 text-center">
+		                	<a href="product-single.html">
+			                	<img class="img-responsive" src="images\gimbal\isteadyx black (1).png" alt="menu image" />
+		                	</a><br>
+		                	<b><a href="product-single.html">iSteady X</a> </b>
+		                </div>
+		                <div class="col-sm-2 col-xs-12 text-center gimbalpd">
+		                	<a href="shopallaccessories.html">Shop All Gimbals&nbsp;&nbsp;<span class="pe-7s-right-arrow" style="font-size: 20px;position: relative;top: 4px;"></span></a>
+		                </div>
+	              	</div>
+
+	              
+	              <!-- / .row -->
+	            </div><!-- / .dropdown-menu -->
+	          </li><!-- / Elements -->
+
+
+	          <!-- Pages -->
+	          <li class="dropdown dropdown-slide">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Accessories <span class="tf-ion-ios-arrow-down"></span></a>
+	            <div class="dropdown-menu">
+		                	<ul>
+								
+								<li><a href="product-single.html">Smart phone holder</a></li>
+								<li role="separator" class="divider"></li>
+								
+								<li><a href="product-single.html">tripod</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="product-single.html">mini tripod</a></li>
+								<li role="separator" class="divider"></li>
+								
+								<li><a href="shopallaccessories.html">shop all accessories&nbsp;&nbsp;<span class="pe-7s-right-arrow" style="font-size: 20px;position: relative;top: 4px;"></span></a></li>
+		                	</ul>
+		                <!-- </div> -->
+
+		                
+	            </div><!-- / .dropdown-menu -->
+	          </li><!-- / Pages -->
+
+
+
+	          <!-- Blog -->
+	          <li class="dropdown ">
+	            <a href="blog-full-width.html">Blog</a>
+	          </li>
+	          <!-- / Blog -->
+
+			<!-- Shop -->
+	          <li class="dropdown dropdown-slide">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">support<span class="tf-ion-ios-arrow-down"></span></a>
+	            <ul class="dropdown-menu">
+	              <li><a href="supportcenter.html">Support Center</a></li>
+	              <li><a href="faq.html">Faq</a></li>
+	              <li><a href="contact.html">contact us</a></li>
+	            </ul>
+	          </li><!-- / Blog -->
+	        </ul><!-- / .nav .navbar-nav -->
+
+	      	</div><!--/.navbar-collapse -->
+	    </div><!-- / .container -->
+	</nav>
+</section>
+
+
+
+
+<footer class="footer section text-center">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-6">
+				
+				<div class="title">
+					<div class="logo text-center">
+						<a href="index.html">
+							<!-- replace logo here -->
+							<img src="images\logo.png" alt="" width="150" height="30">
+						</a>
+					</div>
+					
+					<h2>SUBSCRIBE TO NEWSLETTER</h2>
+					
+				</div>
+				<div class="col-lg-12 ">
+				    <div class="input-group subscription-form">
+				      <input type="text" class="form-control" placeholder="Enter Your Email Address">
+				      <span class="input-group-btn">
+				        <button class="btn btn-main" type="button">Subscribe Now!</button>
+				      </span>
+				    </div><!-- /input-group -->
+			  	</div><!-- /.col-lg-6 -->
+				<div style="margin-top:25px ">
+				<ul class="social-media">
+					<li>
+						<a href="">
+							<i class="tf-ion-social-facebook"></i>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<i class="tf-ion-social-instagram"></i>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<i class="tf-ion-social-twitter"></i>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<i class="tf-ion-social-pinterest"></i>
+						</a>
+					</li>
+				</ul></div>
+			</div>
+			<div class="col-md-2 col-sm-2">	
+				<ul class="footer-menu">
+					<h4>CONTACT</h4>
+					<li>
+						<a href="#">store@hohem.com</a>
+					</li>
+					<li>
+						<a href="#">US: +1 (888) 9658512</a>
+					</li>
+					<li>
+						<a href="contact.html">Go to contact page</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-2 col-sm-2">	
+				<ul class="footer-menu">
+					<h4>SUPPORT</h4>
+					<li>
+						<a href="">Privacy Policy</a>
+					</li>
+					<li>
+						<a href="#">Support Center</a>
+					</li>
+					<li>
+						<a href="">FAQ</a>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="col-md-2 col-sm-2">	
+				<ul class="footer-menu">
+					<h4>SERVICE</h4>
+					<li>
+						<a href="contact.html">Shipping Policy</a>
+					</li>
+					<li>
+						<a href="">Refund Policy</a>
+					</li>
+					<li>
+						<a href="">Terms Of Use</a>
+					</li>
+					
+				</ul>
+			</div>
+
+		</div>
+		<div class="row">	
+				<div class="col-md-12">
+					<p class="copyright-text">Powered by WEBNUM</p>
+				</div>
+		</div>	
+	</div>
+</footer>
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+    
+    <!-- Main jQuery -->
+    <script src="plugins/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.1 -->
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Touchpin -->
+    <script src="plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+    <!-- Instagram Feed Js -->
+    <script src="plugins/instafeed-js/instafeed.min.js"></script>
+    <!-- Video Lightbox Plugin -->
+    <script src="plugins/ekko-lightbox/dist/ekko-lightbox.min.js"></script>
+    <!-- Count Down Js -->
+    <script src="plugins/SyoTimer/build/jquery.syotimer.min.js"></script>
+    
+    <!-- Revolution Slider -->
+    <script type="text/javascript" src="plugins/revolution-slider/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="plugins/revolution-slider/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    
+    <!-- Revolution Slider -->
+    <script type="text/javascript" src="plugins/revolution-slider/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="plugins/revolution-slider/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script type="text/javascript" src="plugins/revolution-slider/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="plugins/revolution-slider/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="plugins/revolution-slider/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="plugins/revolution-slider/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="plugins/revolution-slider/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="plugins/revolution-slider/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="plugins/revolution-slider/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="plugins/revolution-slider/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="plugins/revolution-slider/assets/warning.js"></script>  
+
+
+
+    <!-- Google Mapl -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+  <script type="text/javascript" src="plugins/google-map/gmap.js"></script>
+
+    <!-- Main Js File -->
+    <script src="js/script.js"></script>
+    
+
+
+  </body>
+  </html>

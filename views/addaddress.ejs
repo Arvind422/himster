@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+<head>
+
+ <title>Himster | Add Address</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta name="description" content="This is the official store of Himster Tech, where the customers can buy all the available products from Himster and get the official customer service. The products ...">
+  
+  <meta name="author" content="Himster.in">
+  <!-- Mobile Specific Meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  
+  <!-- Revolution Slider -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/font-awesome/css/font-awesome.css">
+
+  <!-- REVOLUTION STYLE SHEETS -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/settings.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/layers.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/navigation.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body id="body">
+
+<!-- Start Top Header Bar -->
+<%- include('partials/header') %>
+
+<!-- Main Menu Section -->
+
+
+<section class="page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="content">
+					<h1 class="page-name">Add Address</h1>
+					<ol class="breadcrumb">
+						<li><a href="/">Home</a></li>
+						<li><a href="/profile-details"></a>My Account</li>
+						<li class="active">Add Address</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="add-address-page account">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="block text-center">
+          <h2 class="text-center">Add Address</h2>
+          <form class="text-left clearfix" action="/add_address" method="POST">
+            
+            <div class="form-group">
+              <input type="text" class="form-control" id="" placeholder="First Name" name="firstname" value="<%= usr.firstname %>" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="" placeholder="Last Name" name="lastname" value="<%= usr.lastname %>" required>
+            </div>
+           
+            <div class="form-group">
+              <input type="text" class="form-control" id="" placeholder="Address(House No,Building)" name="address" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="" placeholder="Locality / Town" name="town" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="" placeholder="City / District" name="city" required>
+            </div>
+             <div class="form-group">
+              <input type="tel" class="form-control" id="" placeholder="Pincode" name="pincode" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="" placeholder="State" name="state" required>
+            </div>
+
+            <div class="form-group">
+            	<p>Type of Address</p>
+              	<input type="radio" id="home" name="typeofaddress" value="Home" required>
+				<label for="home">Home</label>
+				<input type="radio" id="office" name="typeofaddress" value="Office" required>
+				<label for="office">Office</label>
+            </div>
+            <input type="hidden" name="usrmail" value="<%= usr.email %>">
+            <input type="hidden" name="phone" value="<%= usr.phone %>">
+            <div class="text-center">
+              <button type="submit" class="btn btn-main text-center">save</button>
+            </div>
+          </form>
+          <p class="mt-20"><a href="/address">Go Back</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+
+  </body>
+  </html>

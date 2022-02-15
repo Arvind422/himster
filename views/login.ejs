@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+<head>
+ 
+  <title>Himster | Login </title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta name="description" content="This is the official store of Himster Tech, where the customers can buy all the available products from Himster and get the official customer service. The products ...">
+  
+  <meta name="author" content="Himster.in">
+  <!-- Mobile Specific Meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  
+  <!-- Revolution Slider -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/font-awesome/css/font-awesome.css">
+
+  <!-- REVOLUTION STYLE SHEETS -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/settings.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/layers.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/navigation.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <style>
+  .fb {
+    background-color: #3B5998;
+    color: white;
+  }
+
+  .twitter {
+    background-color: #55ACEE;
+    color: white;
+  }
+
+  .google {
+    background-color: #dd4b39;
+    color: white;
+  }
+  ul li a.btn {
+    width: 50%;
+    padding: 12px;
+    border: none;
+    border-radius: 0px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none; /* remove underline from anchors */
+    color:white;
+  }
+  .btn:hover {
+    opacity: 1;
+  }
+@media only screen and (max-width: 600px){
+  #submita{font-weight: 500}
+  ul li a.btn {
+    width: 100%;
+}
+
+</style>
+
+</head>
+
+<body id="body">
+
+<%- include('partials/header') %>
+
+
+
+ <% if(usrdnexist.length != 0){ %>
+ <div class="alert alert-success alert-dismissible">
+   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong><%= usrdnexist %></strong> 
+  </div>
+   <% } %>
+
+
+ <% if(fgmail.length != 0){ %>
+ <div class="alert alert-success alert-dismissible">
+   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong><%= fgmail[0] %></strong>  <br>
+    <strong><%= fgmail[1] %></strong>
+  </div>
+   <% } %>
+
+
+ <% if(dgemail.length != 0){ %>
+ <div class="alert alert-success alert-dismissible">
+   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong><%= dgemail[0] %></strong>  <br>
+    <strong><%= dgemail[1] %></strong>
+  </div>
+   <% } %>
+
+
+ <% if( passsuccess.length != 0){ %>
+ <div class="alert alert-success alert-dismissible">
+   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong><%= passsuccess %></strong>
+  </div>
+   <% } %>
+
+ <% if(loginerr.length != 0){ %>
+ <div class="alert alert-success alert-dismissible">
+   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong><%= loginerr[0] %></strong>  <br>
+    <strong><%= loginerr[1] %></strong>
+  </div>
+   <% } %>
+
+<section class="signin-page account">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="block text-center">
+          
+          <h2 class="text-center">Welcome Back</h2>
+          <form action="/login" method="POST" class="text-left clearfix"> 
+            <div class="form-group">
+              <input type="email" class="form-control" name="username" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" name="password" placeholder="Password" required>
+            </div> 
+            <div class="text-center"> 
+              <button type="submit" class="btn btn-main text-center" id="submita">Sign in</button>
+              
+              <p class="mt-10"><u><a href="/femailverification">Forgot Password?</a></u></p>
+
+              <p class="mt-10"><u><a href="/emailverification">Didn't Verified Email?</a></u></p>
+            </div>
+          </form>
+
+          <span class="text-center"><b>OR</b></span> 
+           
+          <ul>
+            <li>
+                <a href="/auth/facebook" class="fb btn" style="color:white;">
+                  <i class="fab fa-facebook-f"></i> Login with Facebook
+               </a>
+            </li>
+            <li>
+              <a href="/auth/google" class="google btn" style="color:white;">
+                <i class="fab fa-google-plus-g"></i> Login with Google
+              </a>
+            </li>
+          </ul>
+          <p class="mt-20">New on this site ?  <u><a href="/register">Create New Account</a></u></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+   
+  </body>
+  </html>

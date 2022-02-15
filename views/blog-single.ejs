@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+<head>
+ 
+<title>Himster | Blog</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="This is the official store of Himster Tech, where the customers can buy all the available products from Himster and get the official customer service. The products ...">
+  
+  <meta name="author" content="Himster.in">
+  <!-- Mobile Specific Meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  
+  <!-- Revolution Slider -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/font-awesome/css/font-awesome.css">
+
+  <!-- REVOLUTION STYLE SHEETS -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/settings.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/layers.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/navigation.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5f304096e543350013c372d2&product=inline-share-buttons" async="async"></script>
+<style>
+	
+
+  .tooltipss {
+  position: relative;
+  display: inline-block;
+}	
+  .tooltipss .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltipss .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltipss:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+  </style>
+
+</head>
+
+<body id="body">
+
+<!-- Start Top Header Bar -->
+
+<%- include('partials/header') %>
+<!-- Main Menu Section -->
+
+
+<section class="page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="content">
+					<h1 class="page-name">Blog</h1>
+					<ol class="breadcrumb">
+						<li><a href="/">Home</a></li>
+						<li class="active">blog</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="page-wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="post post-single">
+					<div class="post-thumb">
+						<img class="img-responsive" src="<%= (foundblog.blog_img).slice(7) %>" alt="<%= foundblog.blog_title %>">
+					</div>
+					<h2 class="post-title"><%= foundblog.blog_title %></h2>
+					<div class="post-meta">
+						<ul>
+							<li>
+								<i class="tf-ion-ios-calendar"></i> <%= foundblog.blog_date %>
+							</li>
+							<li>
+								<i class="tf-ion-android-person"></i> POSTED BY ADMIN
+							</li>
+						</ul>
+					</div>
+					<div class="post-content post-excerpt">
+						<p> <%= foundblog.blog_desc1 %> </p>
+						<blockquote class="quote-post">
+				            <p>
+				            	<%= foundblog.blog_desc2 %>
+				            </p>
+				        </blockquote>
+				        <p>
+				        	<%= foundblog.blog_desc3 %>
+				        </p>
+				    <div class="post-social-share">
+				        <h3 class="post-sub-heading">Share this post</h3>
+				        <div class="social-media-icons">
+				        	<ul>
+								<li>
+									<!-- ShareThis BEGIN -->
+									<div class="sharethis-inline-share-buttons"></div>
+									<!-- ShareThis END -->
+								</li>
+							</ul>
+				        </div>
+				    </div>
+
+				   
+
+				   <!--  <div class="post-comments-form">
+				    	<h3 class="post-sub-heading">Leave You Comments</h3>
+				    	<form method="post" action="#" id="form" role="form" >
+
+				            <div class="row">
+
+				                <div class="col-md-6 form-group">
+				                    
+				                    <input type="text" name="name" id="name" class=" form-control" placeholder="Name *" maxlength="100" required="">
+				                </div>
+
+				                <div class="col-md-6 form-group">
+				                    
+				                    <input type="email" name="email" id="email" class=" form-control" placeholder="Email *" maxlength="100" required="">
+				                </div>
+
+
+				                <div class="form-group col-md-12">
+				                    
+				                    <input type="text" name="website" id="website" class=" form-control" placeholder="Website" maxlength="100">
+				                </div>
+
+				                <div class="form-group col-md-12">
+				                    <textarea name="text" id="text" class=" form-control" rows="6" placeholder="Comment" maxlength="400"></textarea>
+				                </div>
+
+				                <div class="form-group col-md-12">
+				                    <button type="submit" class="btn btn-small btn-main ">
+				                        Send comment
+				                    </button>
+				                </div>
+
+
+				            </div>
+
+				        </form>
+				    </div>
+ -->
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<%- include('partials/footer') %>
+
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+
+    <script>
+	function myFunction() {
+	  var copyText = document.getElementById("myInput");
+	  copyText.select();
+	  copyText.setSelectionRange(0, 99999);
+	  document.execCommand("copy");
+	  
+	  var tooltip = document.getElementById("myTooltip");
+	  tooltip.innerHTML = "Copied: " + copyText.value;
+	}
+
+	function outFunc() {
+	  var tooltip = document.getElementById("myTooltip");
+	  tooltip.innerHTML = "Copy to clipboard";
+	}
+	</script>
+  
+
+  </body>
+  </html>

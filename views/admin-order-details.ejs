@@ -1,0 +1,53 @@
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Himster | New Orders</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+</head>
+<body>
+
+
+
+
+
+<div class="container">
+  <b>OrderId:- </b> <%= orderid %>
+<h3>User Details:-</h3>
+<%= fullname %> <br>
+<%= usermail %> <br>
+<%= phone %> <br>
+<%= address %><br>
+<%= typeofaddress %><br>
+
+<br>
+<h3>Ordered Product Details:-</h3>
+
+<% for(i in items){ %>
+<img src="<%= items[i].img %>"><br>
+<%= items[i].name %><br>
+<%= items[i].desc %><br>
+<b>Quantity:-</b><%= items[i].quantity %> <br>
+<b>Total:- </b> <%= items[i].ttlprice %> <br>
+
+
+<% } %>
+
+
+
+
+</div>
+
+
+</body>
+</html>

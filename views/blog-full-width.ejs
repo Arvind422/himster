@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+<head>
+  
+ <title>Himster | Blog </title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="description" content="This is the official store of Himster Tech, where the customers can buy all the available products from Himster and get the official customer service. The products ...">
+  
+  <meta name="author" content="Himster.in">
+  <!-- Mobile Specific Meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  
+  <!-- Revolution Slider -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/font-awesome/css/font-awesome.css">
+
+  <!-- REVOLUTION STYLE SHEETS -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/settings.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/layers.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/navigation.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body id="body">
+
+<!-- Start Top Header Bar -->
+
+<%- include('partials/header') %>
+<!-- Main Menu Section -->
+
+<section class="page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="content">
+					<h1 class="page-name">Blog</h1>
+					<ol class="breadcrumb">
+						<li><a href="/">Home</a></li>
+						<li class="active">Blog</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="page-wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="post">
+					<div class="post-media post-thumb">
+						<a href="/blogs/SmartphoneHolder">
+							<img src="images/isteady_pro3.png" alt="Smartphone Holder">
+						</a>
+					</div>
+					<h2 class="post-title"><a href="/blogs/SmartphoneHolder">Smartphone Holder: Why you need a smartphone holder</a></h2>
+					<div class="post-meta">
+						<ul>
+							<li>
+								<i class="tf-ion-ios-calendar"></i> 12, February 2020
+							</li>
+							<li>
+								<i class="tf-ion-android-person"></i> POSTED BY ADMIN
+							</li>
+						</ul>
+					</div>
+					<div class="post-content">
+						<p>Smartphone Holder allows you to improve the quality of your recordings – for both audio and video.When you have the phone stable, you will get more consistency in your art and even audio (assuming you stay in the same spot as well). Video quality is also improved by the stability for ... </p>
+					
+					<a class="btn btn-main" href="/blogs/SmartphoneHolder"> Continue Reading</a>
+					</div>
+				</div>
+
+<% if(allblogs.length > 0){ %>
+
+<% for(i in allblogs){ %>
+  <div class="post">
+	<div class="post-media post-thumb">
+		<a href="/blogs/<%= allblogs[i].blog_title %>">
+			<img src="<%= (allblogs[i].blog_img).slice(7) %>" alt="<%= allblogs[i].blog_title %>">
+		</a>
+	</div>
+	<h2 class="post-title"><a href="/blogs/<%= allblogs[i].blog_title %>"><%= allblogs[i].blog_title %></a></h2>
+	<div class="post-meta">
+		<ul>
+			<li>
+				<i class="tf-ion-ios-calendar"></i> <%= allblogs[i].blog_date %>
+			</li>
+			<li>
+				<i class="tf-ion-android-person"></i> POSTED BY ADMIN
+			</li>
+		<!-- 	<li>
+				<a href=""><i class="tf-ion-ios-pricetags"></i> LIFESTYLE</a>,<a href=""> TRAVEL</a>, <a href="">FASHION</a>
+			</li>
+			<li>
+				<a href=""><i class="tf-ion-chatbubbles"></i> 4 COMMENTS</a>
+			</li> -->
+		</ul>
+	</div>
+	<div class="post-content">
+		<p><%= (allblogs[i].blog_desc1).slice(0,300) %>... </p>
+	
+	<a class="btn btn-main" href="/blogs/<%= allblogs[i].blog_title %>"> Continue Reading</a>
+	</div>
+
+</div>
+
+<% } %>
+
+<% }else{ %>
+
+<% } %>
+
+
+<div class="text-center">
+	<ul class="pagination post-pagination">
+		<li><a href="#">Prev</a>
+		</li>
+		<li class="active"><a href="#">1</a>
+		</li>
+	<!-- 	<li><a href="#">2</a>
+		</li>
+		<li><a href="#">3</a>
+		</li>
+		<li><a href="#">4</a>
+		</li>
+		<li><a href="#">5</a>
+		</li> -->
+		<li><a href="#">Next</a>
+		</li>
+	</ul>
+</div>
+      		</div>
+		</div>
+	</div>
+</div>
+
+<%- include('partials/footer') %>
+
+  </body>
+  </html>

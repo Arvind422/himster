@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Himster | Upload Products</title>
+  <meta charset="utf-8">
+   <meta name="description" content="This is the official store of Himster Tech, where the customers can buy all the available products from Himster and get the official customer service. The products ...">
+  
+  <meta name="author" content="Himster.in">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+  #topheader .navbar-nav li > a {
+  text-transform: capitalize;
+  color: #333;
+  -webkit-transition: background-color .2s, color .2s;
+  transition: background-color .2s, color .2s;
+}
+#topheader .navbar-nav li > a:hover, #topheader .navbar-nav li > a:focus {
+  background-color: #333;
+  color: #fff;
+}
+
+#topheader .navbar-nav li.active > a {
+  background-color: #333;
+  color: #fff;
+}
+</style>
+
+
+</head>
+<body>
+
+
+<%- include('partials/admin-header') %>
+
+<div class="container">
+  <h2>Upload New Product:</h2>
+  <form action="/add_products_step3" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="usr">Enter Product's Main Title(Name):</label>
+      <input type="text" class="form-control" id="usr" name="name" value="<%= name %>" required>
+    </div>
+    <div class="form-group">
+      <label for="usr">Enter Product's Sub-title:</label>
+      <input type="text" class="form-control" id="usr" name="subtitle" value="<%= subtitle %>" required>
+    </div>
+    <div class="form-group">
+      <label for="usr">Enter Product's Category:</label>
+      <input type="text" class="form-control" id="usr" name="category" value="<%= cat %>" required>
+    </div>
+    <div class="form-group">
+      <label for="usr">Enter Product's Oringinal Price:</label>
+      <input type="number" class="form-control" id="usr" name="oringinalprice" value="<%= oringinalprice %>" required>
+    </div>
+    <div class="form-group">
+      <label for="usr">Enter Product's Discounted Price:</label>
+      <input type="number" class="form-control" id="usr" name="discountedprice" value="<%= discountedprice %>" required>
+    </div>
+   <div class="form-group">
+      <label for="usr">Enter Product's Description:</label>
+      <input type="text" class="form-control" id="usr" name="desc" value="<%= desc %>" required>
+    </div>
+    <div class="form-group">
+      <label for="usr">Enter Product's Color:</label>
+      <input type="text" class="form-control" id="usr" name="color" value="<%= color %>" required>
+    </div>
+    
+
+    <label for="product">Choose Product's Third Image:</label>
+
+    <input type="file" id="product" name="myimage" required="true" />
+<br>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+
+    
+  </form>
+</div>
+
+<script>
+  $( '#topheader .navbar-nav a' ).on( 'click', function () {
+  $( '#topheader .navbar-nav' ).find( 'li.active' ).removeClass( 'active' );
+  $( this ).parent( 'li' ).addClass( 'active' );
+});
+</script>
+</body>
+</html>

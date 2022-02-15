@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+<head>
+<title>Himster | Give Rating </title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="This is the official store of Himster Tech, where the customers can buy all the available products from Himster and get the official customer service. The products ...">
+  
+  <meta name="author" content="Himster.in">
+  <!-- Mobile Specific Meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  
+  <!-- Revolution Slider -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/font-awesome/css/font-awesome.css">
+
+  <!-- REVOLUTION STYLE SHEETS -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/settings.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/layers.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/navigation.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+<style>
+	.sub-heading{
+	letter-spacing: 2px;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 16px;
+	}
+
+	/*================Star rating dynamic=============*/
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20px; }
+h1 { font-size: 1.5em; margin: 10px; }
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
+/*================Star rating dynamic=============*/
+
+
+	.contact-number ul .dropdown-menu{right: auto}
+
+	.contact-number ul .dropdown-menu li a {
+    color: #222;
+    font-size: 12px;
+    border: 1px solid transparent;
+    display: block;
+    padding: 8px 16px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: .3s all;
+	}
+
+	.contact-number ul .dropdown-menu>li>a {
+    display: block;
+    /*padding: 3px 20px;*/
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+	}
+
+	.contact-number ul .dropdown-menu li a:hover {
+    background-color: #000;
+    color: #fff;
+	}
+
+	.dropdown-menu .divider {
+    margin: 4px 0;
+	}
+
+	.footer .footer-menu li {
+		display: block;
+	}
+	.footer .footer-menu li a:hover {
+		color:black;
+	}
+	.footer .footer-menu li a{
+	color:#6d6d6dc4;
+	font-weight:bold;
+	font-size: 14px; 
+	}
+	.col-lg-12{float: none;}
+
+	 @media only screen and (max-width: 680px){
+	 	.post-comments-form form .pull-right {
+		    float: none!important;
+		}
+		.mt-40 .col-md-6 .img00{ width: 100%!important; height: auto!important; }
+	}
+	@media (max-width: 992px){
+	.container {
+    width: 100%;
+	}
+}
+</style>	
+
+</head>
+
+<body id="body">
+
+<%- include('partials/header') %>
+<div class="container mt-40" style="margin-bottom: 30px">
+	<div class="row">
+		<div class="col-md-6 col-sm-12 col-xs-12">
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<img class="img00" width="100%" height="300"  src="<%= img %>" alt="<%= name %>" />
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<h2><%= name %></h2>
+					<p class="product-price">
+						$<%= total %>
+					</p>
+					<p class="product-description mt-20">
+						<%= desc %>
+					</p>
+			</div>
+			
+		</div>
+
+
+		<div class="col-md-6 col-sm-12 col-xs-12">	
+					<div class="post-comments-form">
+				    	<h3 class="post-sub-heading">Leave Your Review</h3>
+				    	<form method="post" action="/product-ratings" id="form" role="form" >
+
+				            <div class="row">
+
+				                <div class="col-md-6 form-group">
+				                    <!-- Name -->
+				                    <input type="text" name="name" id="name" class=" form-control" maxlength="100" value="<%= fullname %>" required>
+				                </div>
+
+				                <div class="col-md-6 form-group">
+				                    <!-- Email -->
+				                    <input type="email" name="email" id="email" class=" form-control" placeholder="Email *" maxlength="100" value="<%= email %>" required>
+				                </div>
+
+
+				                <!-- <div class="form-group col-md-12">
+				                  
+				                    <input type="text" name="Title" id="Title" class=" form-control" placeholder="Title" maxlength="200" required>
+				                </div>
+ -->
+				                <!-- Comment -->
+				                <div class="form-group col-md-12">
+				                    <textarea name="text" id="text" class=" form-control" rows="6" placeholder="Add a written review" maxlength="400" required></textarea>
+				                </div>
+
+				                <div class="form-group col-md-6">
+				                	<h4 class="sub-heading">Give Rating</h4>
+				                	<fieldset class="rating" required>
+									    <input type="radio" id="star5" name="rating" value="5" required="true" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+									    <input type="radio" id="star4half" name="rating" value="4.5" required="true" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+									    <input type="radio" id="star4" name="rating" value="4" required="true" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+									    <input type="radio" id="star3half" name="rating" value="3.5" required="true" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+									    <input type="radio" id="star3" name="rating" value="3" required="true" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+									    <input type="radio" id="star2half" name="rating" value="2.5" required="true" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+									    <input type="radio" id="star2" name="rating" value="2" required="true" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+									    <input type="radio" id="star1half" name="rating" value="1.5" required="true" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+									    <input type="radio" id="star1" name="rating" value="1" required="true" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+									    <input type="radio" id="starhalf" name="rating" value="0.5" required="true" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+									</fieldset>
+				                </div>
+
+				                <div class="form-group col-md-6">
+				                	
+				                </div>
+				                <% if(usr.profile){ %>
+				                <input type="hidden" name="profile" value="<%= usr.profile %>"> 
+				                <% } %>
+				                 <% if(usr.image){ %>
+				                <input type="hidden" name="image" value="<%= usr.image %>"> 
+				                <% } %>
+				                <input type="hidden" name="prodname" value="<%= name %>">
+
+				                <!-- Send Button -->
+				                <div class="form-group col-md-12 pull-right text-center">
+				                    <button type="submit" class="btn btn-small btn-main ">
+				                        Submit
+				                    </button>
+				                </div>
+
+
+				            </div>
+
+				        </form>
+					</div>
+		</div>
+	</div>
+</div>
+
+
+<%- include('partials/footer') %>
+  </body>
+  </html>

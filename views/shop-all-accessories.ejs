@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <title>Himster | Shop </title>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta name="description" content="This is the official store of Himster Tech, where the customers can buy all the available products from Himster and get the official customer service. The products ...">
+  
+  <meta name="author" content="Himster.in">
+  <!-- Mobile Specific Meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  
+  <!-- Revolution Slider -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/font-awesome/css/font-awesome.css">
+
+  <!-- REVOLUTION STYLE SHEETS -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/settings.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/layers.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/navigation.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+<style>
+	.contact-number ul .dropdown-menu{right: auto}
+
+	.contact-number ul .dropdown-menu li a {
+    color: #222;
+    font-size: 12px;
+    border: 1px solid transparent;
+    display: block;
+    padding: 8px 16px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: .3s all;
+	}
+
+	.contact-number ul .dropdown-menu>li>a {
+    display: block;
+    /*padding: 3px 20px;*/
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+	}
+
+	.contact-number ul .dropdown-menu li a:hover {
+    background-color: #000;
+    color: #fff;
+	}
+
+	.dropdown-menu .divider {
+    margin: 4px 0;
+	}
+
+	.footer .footer-menu li {
+		display: block;
+	}
+	.footer .footer-menu li a:hover {
+		color:black;
+	}
+	.footer .footer-menu li a{
+	color:#6d6d6dc4;
+	font-weight:bold;
+	font-size: 14px; 
+	}
+	.col-lg-12{float: none;}
+	
+	 @media only screen and (max-width: 400px){
+    .btn-main {padding: 14px 8px;}
+	}
+
+	@media (max-width: 992px){
+	.container {
+    width: 100%;
+	}
+	}
+
+/*==============================STYLING===================*/
+.modal-content {
+	margin: 3%;
+}
+@media (min-width: 668px){
+	.modal-content {
+    width: 47%;
+    float: left;
+    margin:1.5%;}
+	}
+
+</style>	
+
+</head>
+
+<body id="body">
+
+<%- include('partials/header') %>
+
+<section class="page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="content">
+					<% if (cat != "New"){ %>
+					<h1 class="page-name">Shop / <%= cat %></h1>
+					<ol class="breadcrumb">
+						<li><a href="/">Home</a></li>
+						<li class="active">Shop / <%= cat %></li>
+					</ol>
+					<% }else{ %>
+					<h1 class="page-name">Shop / <%= cat %></h1>
+					<ol class="breadcrumb">
+						<li><a href="/">Home</a></li>
+						<li class="active">Shop / <%= cat %></li>
+					</ol>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<div class="container">
+<% if (cat != "New"){ %>
+ 	<% for(i in foundproducts){ %>
+    	<div class="modal-content autoheight">
+	      	<div class="modal-body">
+	        	<div class="row">
+	        		<div class="col-md-6">
+	        			<div class="modal-image">
+		        			<img class="img-responsive" src="<%= (foundproducts[i].prod_img1).slice(7) %>" alt="<%= foundproducts[i].prod_title %>" />
+	        			</div>
+	        		</div>
+	        		<div class="col-md-6">
+	        			<div class="product-short-details">
+	        				<h2 class="product-title"><%= foundproducts[i].prod_title %></h2>
+	        				<p class="product-price">₹ <%= foundproducts[i].prod_discountedprice  %></p>
+	        				<p class="product-short-description">
+	        					<%= (foundproducts[i].prod_desc).slice(0,100) %>...<a href="/products/<%= foundproducts[i].prod_title %> ">Read more</a>
+	        				</p>
+
+	        						<% if(authentication){ %>
+
+	        						<% if(foundproducts[i].instock){ %>
+
+									<form method="POST" action="/cart">
+									<input type="hidden" name="userId" value="<%= usr._id %>">	
+									<input type="hidden" name="productId" value="<%= foundproducts[i]._id %>">
+									<input type="hidden" name="quantity" value="1">
+									<input type="hidden" name="name" value="<%= foundproducts[i].prod_title %>">
+									<input type="hidden" name="desc" value="<%= foundproducts[i].prod_desc %>">
+									<input type="hidden" name="img" value="<%= (foundproducts[i].prod_img1).slice(7) %>">
+									<input type="hidden" name="price" value="<%= foundproducts[i].prod_discountedprice %>">
+									<button class="btn btn-main" type="submit">Add To Cart</button>
+									</form>
+
+									<% }else{ %>
+									<button class="btn btn-main" type="button">Out-Of-Stock</button>
+
+									<% } %>
+
+
+	        						<% }else{ %>
+									<a href="/login" class="btn btn-main">Add To Cart</a>
+									<% } %>
+			                        
+	        				
+	        				<a href="/products/<%= foundproducts[i].prod_title %>" class="btn btn-transparent">View Product Details</a>
+	        			</div>
+	        		</div>
+	        	</div>
+	        </div>
+    	</div>
+
+    	<% } %>
+
+  <% }else{ %>
+  				<div class="modal-content autoheight">
+	      	<div class="modal-body">
+	        	<div class="row">
+	        		<div class="col-md-6">
+	        			<div class="modal-image">
+		        			<img class="img-responsive" src="<%= (foundproducts[foundproducts.length - 1].prod_img1).slice(7) %>" alt="<%= foundproducts[foundproducts.length - 1].prod_title %>">
+	        			</div>
+	        		</div>
+	        		<div class="col-md-6">
+	        			<div class="product-short-details">
+	        				<h2 class="product-title"><%= foundproducts[foundproducts.length - 1].prod_title %></h2>
+	        				<p class="product-price">₹ <%= foundproducts[foundproducts.length - 1].prod_discountedprice  %></p>
+	        				<p class="product-short-description">
+	        					<%= (foundproducts[foundproducts.length - 1].prod_desc).slice(0,100) %>...<a href="/products/<%= foundproducts[foundproducts.length - 1].prod_title %>">Read More</a>
+	        				</p>
+	        				
+	        						<% if(authentication){ %>
+
+	        						<% if(foundproducts[foundproducts.length - 1].instock){ %>
+
+	        						
+									<form method="POST" action="/cart">
+									<input type="hidden" name="userId" value="<%= usr._id %>">	
+									<input type="hidden" name="productId" value="<%= foundproducts[foundproducts.length - 1]._id %>">
+									<input type="hidden" name="quantity" value="1">
+									<input type="hidden" name="name" value="<%= foundproducts[foundproducts.length - 1].prod_title %>">
+									<input type="hidden" name="desc" value="<%= foundproducts[foundproducts.length - 1].prod_desc %>">
+									<input type="hidden" name="img" value="<%= (foundproducts[foundproducts.length - 1].prod_img1).slice(7) %>">
+									<input type="hidden" name="price" value="<%= foundproducts[foundproducts.length - 1].prod_discountedprice %>">
+									<button class="btn btn-main" type="submit">Add To Cart</button>
+									</form>
+
+
+									<% }else{ %>
+									<button class="btn btn-main" type="button">Out-Of-Stock</button>
+
+									<% } %>
+
+	        						<% }else{ %>
+									<a href="/login" class="btn btn-main">Add To Cart</a>
+									<% } %>
+	        				<a href="/products/<%= foundproducts[foundproducts.length - 1].prod_title %>" class="btn btn-transparent">View Product Details</a>
+	        			</div>
+	        		</div>
+	        	</div>
+	        </div>
+    	</div>
+
+
+    		<div class="modal-content autoheight">
+	      	<div class="modal-body">
+	        	<div class="row">
+	        		<div class="col-md-6">
+	        			<div class="modal-image">
+		        			<img class="img-responsive" src="<%= (foundproducts[foundproducts.length - 2].prod_img1).slice(7) %>" alt="<%= foundproducts[foundproducts.length - 2].prod_title %>" />
+	        			</div>
+	        		</div>
+	        		<div class="col-md-6">
+	        			<div class="product-short-details">
+	        				<h2 class="product-title"><%= foundproducts[foundproducts.length - 2].prod_title %></h2>
+	        				<p class="product-price">₹ <%= foundproducts[foundproducts.length - 2].prod_discountedprice  %></p>
+	        				<p class="product-short-description">
+	        					<%= (foundproducts[foundproducts.length - 2].prod_desc).slice(0,100) %>...<a href="/products/<%= foundproducts[foundproducts.length - 2].prod_title %>">Read More</a>
+	        				</p>
+	        				
+	        						<% if(authentication){ %>
+
+	        						<% if(foundproducts[foundproducts.length - 2].instock){ %>
+									<form method="POST" action="/cart">
+									<input type="hidden" name="userId" value="<%= usr._id %>">	
+									<input type="hidden" name="productId" value="<%= foundproducts[foundproducts.length - 2]._id %>">
+									<input type="hidden" name="quantity" value="1">
+									<input type="hidden" name="name" value="<%= foundproducts[foundproducts.length - 2].prod_title %>">
+									<input type="hidden" name="desc" value="<%= foundproducts[foundproducts.length - 2].prod_desc %>">
+									<input type="hidden" name="img" value="<%= (foundproducts[foundproducts.length - 2].prod_img1).slice(7) %>">
+									<input type="hidden" name="price" value="<%= foundproducts[foundproducts.length - 2].prod_discountedprice %>">
+									<button class="btn btn-main" type="submit">Add To Cart</button>
+									</form>
+									<% }else{ %>
+									<button class="btn btn-main" type="button">Out-Of-Stock</button>
+
+									<% } %>
+
+	        						<% }else{ %>
+									<a href="/login" class="btn btn-main">Add To Cart</a>
+									<% } %>
+	        				<a href="/products/<%= foundproducts[foundproducts.length - 2].prod_title %>" class="btn btn-transparent">View Product Details</a>
+	        			</div>
+	        		</div>
+	        	</div>
+	        </div>
+    	</div>
+
+
+<% } %>
+	
+
+
+</div>
+
+<%- include('partials/footer') %>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
+     <script>
+       $(function() {
+        $('.autoheight').matchHeight();
+       });
+     </script>
+
+  </body>
+  </html>

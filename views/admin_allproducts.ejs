@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <title>Himster | Myproducts </title>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="This is the official store of Himster Tech, where the customers can buy all the available products from Himster and get the official customer service. The products ...">
+  
+  <meta name="author" content="Himster.in">
+
+  <!-- Mobile Specific Meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  
+  <!-- Revolution Slider -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/fonts/font-awesome/css/font-awesome.css">
+
+  <!-- REVOLUTION STYLE SHEETS -->
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/settings.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/layers.css">
+  <link rel="stylesheet" type="text/css" href="plugins/revolution-slider/revolution/css/navigation.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
+
+<style>
+  #topheader .navbar-nav li > a {
+  text-transform: capitalize;
+  color: #333;
+  -webkit-transition: background-color .2s, color .2s;
+  transition: background-color .2s, color .2s;
+}
+#topheader .navbar-nav li > a:hover, #topheader .navbar-nav li > a:focus {
+  background-color: #333;
+  color: #fff;
+}
+
+#topheader .navbar-nav li.active > a {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn-main:hover{
+	background: white;
+color:black;
+border: 1px solid black;
+font-weight: bolder;}
+	
+/*==============================STYLING===================*/
+.modal-content {
+	margin: 3%;
+}
+@media (min-width: 668px){
+	.modal-content {
+    width: 47%;
+    float: left;
+    margin:1.5%;}
+	}
+
+</style>	
+
+<!-- Main Js File -->
+  <script>
+   setTimeout(function() {
+                $('.alert').fadeOut('slow');
+            }, 3500);
+
+            
+    $(".nav .navbar-nav li").on("click", function(){
+   $(".nav").find(".active").removeClass("active");
+   $(this).addClass("active");
+}); 
+  </script>
+
+  <script>
+       $(function() {
+        $('.autoheight').matchHeight();
+       });
+  </script>
+
+<script>
+  $( '#topheader .navbar-nav a' ).on( 'click', function () {
+  $( '#topheader .navbar-nav' ).find( 'li.active' ).removeClass( 'active' );
+  $( this ).parent( 'li' ).addClass( 'active' );
+});
+</script>
+
+</head>
+
+<body id="body">
+
+<%- include('partials/admin-header') %>
+<div class="container">
+
+<% if( msg.length != 0){ %>
+ <div class="alert alert-success alert-dismissible">
+   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong><%= msg %></strong>
+  </div>
+   <% } %>
+
+<% if(foundproducts.length > 0){ %>
+ 	<% for(i in foundproducts){ %>
+    	<div class="modal-content">
+	      	<div class="modal-body autoheight">
+	        	<div class="row">
+	        		<div class="col-md-6">
+	        			<div class="modal-image">
+		        			<img class="img-responsive" src="<%= (foundproducts[i].prod_img1).slice(7) %>" alt="<%= foundproducts[i].prod_title %>" />
+	        			</div>
+	        		</div>
+	        		<div class="col-md-6">
+	        			<div class="product-short-details">
+	        				<h2 class="product-title"><%= foundproducts[i].prod_title %></h2>
+	        				<p class="product-price">₹ <%= foundproducts[i].prod_discountedprice  %></p>
+	        				<p class="product-short-description">
+	        					<%= (foundproducts[i].prod_desc).slice(0,100) %>...<a href="/products/<%= foundproducts[i].prod_title %>" class="btn btn-transparent">View Product Details</a>
+	        				</p>
+	        				<a href="/admin/editproduct/<%= foundproducts[i].prod_title %>" class="btn btn-main">Edit</a>
+	        				<br><br>
+	        				<form action="/admin/deleteproduct" method="POST">
+	        					<input type="hidden" name="prodid" value="<%= foundproducts[i]._id %>">
+	        					<button type="submit" class="btn btn-main">Delete</button>
+	        				</form>
+                  <br>
+                  <% if(foundproducts[i].instock){ %>
+                  <form action="/instock" method="POST">
+                    <input type="hidden" name="prodid" value="<%= foundproducts[i]._id %>">
+                    <button type="submit" class="btn btn-main">In-Stock</button>
+                  </form>
+                  <% }else{ %>
+                  <form action="/outstock" method="POST">
+                    <input type="hidden" name="prodid" value="<%= foundproducts[i]._id %>">
+                    <button type="submit" class="btn btn-main">Out-Of-Stock</button>
+                  </form>
+
+                  <% } %>
+	        				
+	        			</div>
+	        		</div>
+	        	</div>
+	        </div>
+    	</div>
+
+    	<% } %>
+
+ <% }else{ %>
+<h1>Currently...No Products are available.</h1>
+<% } %>
+ 	
+
+</div>
+
+
+<script>
+  $( '#topheader .navbar-nav a' ).on( 'click', function () {
+  $( '#topheader .navbar-nav' ).find( 'li.active' ).removeClass( 'active' );
+  $( this ).parent( 'li' ).addClass( 'active' );
+});
+</script>
+  </body>
+  </html>
