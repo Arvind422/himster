@@ -385,7 +385,6 @@
                       <% } %>
                         <span class="total-price">₹ <%= ttl %></span>
 
-
                     </div>
                     <ul class="text-center cart-buttons">
                     	<li><a href="/cart" class="btn btn-small">View Cart</a></li>
@@ -393,7 +392,6 @@
                     </ul>
                 </div>
          <% }else{ %>
-
 	            <a href="/cart"><i class="tf-ion-android-cart"></i>Cart<span id="displaycart">0</span></a>
 
      <% } %>
@@ -406,7 +404,6 @@
 	          	<a href="/wishlist"><i class="tf-ion-ios-heart"></i>Wishlist<span id="displaycart"><%= numofwishlists %></span></a>
 	       <%  }else{ %>
 	<a href="/wishlist"><i class="tf-ion-ios-heart"></i>Wishlist<span id="displaycart">0</span></a>
-
 
 	  <% } %>
 	          </li>
@@ -474,12 +471,11 @@
 							<% if(authentication){ %>
 				            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false"> Hello, <%= usr.firstname %> <span class="tf-ion-ios-arrow-down"></span></a>
 				             <ul class="dropdown-menu">
-			<%	if(usr.email){ %>
-			<%	if(usr.email == 'storehimster@gmail.com'){ %>
-				             	<li><a href="/admin/myproducts">Admin Panel</a></li>
-				            <% } %>
-				            <% } %>
-
+				              <%  if(usr.email){ %>
+      <%  if(usr.email == 'storehimster@gmail.com'){ %>
+                      <li><a href="/admin/myproducts">Admin Panel</a></li>
+                    <% } %>
+                    <% } %>
 								<li><a href="/profile-details">My Account</a></li>
 								<li><a href="/order">my orders</a></li>
 								<li><a href="/wishlist">wishlist</a></li>
@@ -520,14 +516,14 @@
 	          </li>
 	          <!-- / Home -->
 
-	          <li class="dropdown full-width dropdown-slide">
+	          <!-- <li class="dropdown full-width dropdown-slide">
 	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">New <span class="tf-ion-ios-arrow-down"></span></a>
 	            <div class="dropdown-menu">
 	              	
-	              	<div class="row">
+	              	<div class="row"> -->
 
 		                <!-- Mega Menu -->
-		                <div class="col-sm-2 col-xs-12 col-sm-offset-4 text-center">
+		                <!-- <div class="col-sm-2 col-xs-12 col-sm-offset-4 text-center">
 		                	<a href="/products/Hohem iSteady X">
 			                	<img class="img-responsive" src="images\gimbal\isteadyx.png" alt="menu image" />
 		                	</a><br>
@@ -544,41 +540,41 @@
 		                	<a href="/shop/New">New Arrivals!&nbsp;&nbsp;<span class="pe-7s-right-arrow" style="font-size: 20px;position: relative;top: 4px;"></span></a>
 		                </div>
 		                
-	              	</div>
+	              	</div> -->
 
 	              <!-- / .row -->
-	            </div><!-- / .dropdown-menu -->
-	          </li><!-- / Elements -->
+	            <!-- </div> / .dropdown-menu 
+	          </li>/ Elements -->
 
 
 	          <!-- Elements -->
-	          <li class="dropdown full-width dropdown-slide">
+	          <!-- <li class="dropdown full-width dropdown-slide">
 	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Gimbal <span class="tf-ion-ios-arrow-down"></span></a>
 	            <div class="dropdown-menu">
 	              	
-	              	<div class="row">
+	              	<div class="row"> -->
 
 		                <!-- Introduction -->
 		               
 
 		                <!-- Contact -->
-		                <div class="col-sm-2 col-xs-12 text-center">
+		                <!-- <div class="col-sm-2 col-xs-12 text-center">
 		                	<a href="/products/Hohem iSteady Mobile+">
 			                	<img class="img-responsive" src="images\gimbal\isteady_mobile+.png" alt="menu image" />
 		                	</a> <br>
 		                	<b><a href="/products/Hohem iSteady Mobile+">Hohem iSteady Mobile+</a></b>
-		                </div>
+		                </div> -->
 
 		                <!-- Utility -->
-		                <div class="col-sm-2 col-xs-12 text-center">
+		                <!-- <div class="col-sm-2 col-xs-12 text-center">
 		                	<a href="/products/Hohem iSteady Pro 3">
 			                	<img class="img-responsive" src="images\gimbal\isteady_pro3.png" alt="menu image" />
 		                	</a><br>
 		                	<b><a href="/products/Hohem iSteady Pro 3">Hohem iSteady Pro 3</a> </b>
-		                </div>
+		                </div> -->
 
 		                <!-- Mega Menu -->
-		                <div class="col-sm-2 col-xs-12 text-center">
+		                <!-- <div class="col-sm-2 col-xs-12 text-center">
 		                	<a href="/products/Hohem iSteady Multi">
 			                	<img class="img-responsive" src="images\gimbal\isteady_mutli_1.png" alt="menu image" />
 		                	</a><br>
@@ -599,16 +595,16 @@
 		                <div class="col-sm-2 col-xs-12 text-center gimbalpd">
 		                	<a href="/shop/Gimbal">Shop All Gimbals&nbsp;&nbsp;<span class="pe-7s-right-arrow" style="font-size: 20px;position: relative;top: 4px;"></span></a>
 		                </div>
-	              	</div>
+	              	</div> -->
 
 	              
 	              <!-- / .row -->
-	            </div><!-- / .dropdown-menu -->
-	          </li><!-- / Elements -->
+	            <!-- </div>  / .dropdown-menu 
+	          </li>/ Elements -->
 
 
 	          <!-- Pages -->
-	          <li class="dropdown dropdown-slide">
+	          <!-- <li class="dropdown dropdown-slide">
 	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Accessories <span class="tf-ion-ios-arrow-down"></span></a>
 	            <div class="dropdown-menu">
 		                	<ul>
@@ -622,21 +618,20 @@
 								<li role="separator" class="divider"></li>
 								
 								<li><a href="/shop/Accessories">shop all accessories&nbsp;&nbsp;<span class="pe-7s-right-arrow" style="font-size: 20px;position: relative;top: 4px;"></span></a></li>
-		                	</ul>
+		                	</ul> -->
 		                <!-- </div> -->
 
-		                
-	            </div><!-- / .dropdown-menu -->
-	          </li><!-- / Pages -->
-
-	          <li class="dropdown full-width dropdown-slide">
+<!-- 		                
+	            </div> / .dropdown-menu 
+	          </li>/ Pages -->
+	          	<!-- <li class="dropdown full-width dropdown-slide">
 	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Our Products <span class="tf-ion-ios-arrow-down"></span></a>
 	            <div class="dropdown-menu">
 	              	
-	              	<div class="row">
+	              	<div class="row"> -->
 
 		                <!-- Mega Menu -->
-		                <div class="col-sm-2 col-xs-12 col-sm-offset-2 text-center">
+		                <!-- <div class="col-sm-2 col-xs-12 col-sm-offset-2 text-center">
 		                	<a href="/products/Hohem iSteady X">
 			                	<img class="img-responsive" src="images\gimbal\isteadyx.png" alt="menu image" />
 		                	</a><br>
@@ -652,19 +647,22 @@
 		                	<a href="/products/Hohem iSteady Gear (Z Kit)">
 			                	<img class="img-responsive" src="images\gimbal\isteady_gear_Z_kit.png" alt="menu image" />
 		                	</a><br>
-		                	<b> <a href="/products/Hohem iSteady Gear (Z Kit)">Hohem iSteady Gear (Z-kit)</a></b>
+		                	<b> <a href="/products/Hohem iSteady Gear (Z Kit)">iSteady Gear (Z-kit)</a></b>
 		                </div>
 		                
 		                <div class="col-sm-2 col-xs-12 text-center" style="margin-top: 0;padding-top:50px;">
 		                	<a href="/shop">View All Products&nbsp;&nbsp;<span class="pe-7s-right-arrow" style="font-size: 20px;position: relative;top: 4px;"></span></a>
 		                </div>
 		                
-	              	</div>
+	              	</div> -->
 
 	              <!-- / .row -->
-	            </div><!-- / .dropdown-menu -->
-	          </li><!-- / Elements -->
-
+	            <!-- </div> / .dropdown-menu 
+	          </li>/ Elements -->
+			  <li class="dropdown ">
+	            <a href="/">Wireless Doorbell</a>
+	          </li>
+			  
 	          <!-- Blog -->
 	          <li class="dropdown ">
 	            <a href="/blogs">Blog</a>
@@ -672,14 +670,22 @@
 	          <!-- / Blog -->
 
 			<!-- Shop -->
-	          <li class="dropdown dropdown-slide">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">support <span class="tf-ion-ios-arrow-down"></span></a>
+	          <!-- <li class="dropdown dropdown-slide">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">support<span class="tf-ion-ios-arrow-down"></span></a>
 	            <ul class="dropdown-menu">
 	             <li><a href="/FAQs">FAQs</a></li>
 	              <li><a href="/contact">contact us</a></li>
 	            </ul>
-	          </li><!-- / Blog -->
-	        </ul><!-- / .nav .navbar-nav -->
+	          </li>-->
+			  
+			  <li class="dropdown">
+				  <a href="/FAQs">FAQs</a>
+			  </li>
+	          <li class="dropdown">
+				  <a href="/contact">contact us</a>
+		      </li>
+
+	        </ul> 
 
 	      	</div><!--/.navbar-collapse -->
 	    </div><!-- / .container -->
