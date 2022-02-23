@@ -88,8 +88,8 @@ app.use(multer({storage: storage, fileFilter: fileFilter}).single("myimage"));
 
 
 
-//mongoose.connect("mongodb+srv://shivam:shivam@cluster0-iher4.mongodb.net/himsterDB",{useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.connect("mongodb://localhost:27017/himsterDB", {useNewUrlParser: true,useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://anuj:anujtest@cluster0-iher4.mongodb.net/himsterDB",{useNewUrlParser: true, useUnifiedTopology: true});
+//mongoose.connect("mongodb://localhost:27017/himsterDB", {useNewUrlParser: true,useUnifiedTopology: true});
 mongoose.set("useCreateIndex", true);
 
 
@@ -629,7 +629,7 @@ console.log( req.user);
                             'Content-Length': post_data.length
                         }
                     };
-
+                    
                     // Set up the request
                     var response = "";
                     var post_req = https.request(options, function (post_res) {
@@ -664,7 +664,7 @@ var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'StoreHimster@gmail.com',
-    pass: 'storehimster786'
+    pass: 'Storehimster@786'
   }
 });
 
@@ -1093,7 +1093,7 @@ var transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
         user: "StoreHimster@gmail.com",
-        pass: "storehimster786"
+        pass: "Storehimster@786"
     }
 });
 var mailOptions,link;
@@ -1206,7 +1206,7 @@ app.post("/emailverification",(req,res)=>{
     service: "Gmail",
     auth: {
         user: "StoreHimster@gmail.com",
-        pass: "storehimster786"
+        pass: "Storehimster@786"
     }
 });
 var mailOptions,link;
@@ -1942,7 +1942,7 @@ app.post("/femailverification",(req,res)=>{
     service: "Gmail",
     auth: {
         user: "StoreHimster@gmail.com",
-        pass: "storehimster786"
+        pass: "Storehimster@786"
     }
 });
 var mailOptions,link;
@@ -1954,10 +1954,10 @@ var mailOptions,link;
     subject : "Password reset link",
     html : `<h3 style="font-family:sans-serif; ">Welcome to HIMSTER.</h3><p style="font-family:sans-serif; ">You're receiving this message because you recently reqested for a reset password for your Himster account.</p><p style="font-family:sans-serif; ">To reset your password click on the button below.</p><a href="${link}" style="padding: 8px 14px;border:1px solid black;color:white;font-weight:500;background-color: black;text-decoration: none;border-radius:5px;margin-bottom: 15px;">Reset Password</a><br><p style="font-family:sans-serif; border-top: 1px solid black;border-bottom: 1px solid black;padding: 20px 0px;margin: 20px 0px;"> This link will expire in 5 minutes.</p> <small style="float:right;">© 2020 Himster All Rights Reserved.</small>`
   }
-  // console.log(mailOptions);
+   console.log(mailOptions);
   transporter.sendMail(mailOptions, function(error, response){
      if(error){
-          // console.log(error);
+           console.log(error);
           res.render(__dirname+ "/views/wrongpg");
    }else{
           // console.log("Message sent Successfully ");

@@ -116,6 +116,114 @@ router.get("/ShippingPolicy",(req,res)=>{
 });
 
 
+
+router.get("/X",(req,res)=>{
+
+  let usr= {};
+  let authentication= false;
+  if(req.isAuthenticated()){
+  
+    usr= req.user;
+    if(usr.confirmed){
+      authentication= true;
+    }
+    else{
+      authentication= false;
+    }
+  }
+  else{
+    authentication= false;
+  
+  }
+  res.render("isteadyX",{usr: usr,authentication: authentication});
+});
+
+router.get("/Pro3",(req,res)=>{
+
+  let usr= {};
+  let authentication= false;
+  if(req.isAuthenticated()){
+  
+    usr= req.user;
+    if(usr.confirmed){
+      authentication= true;
+    }
+    else{
+      authentication= false;
+    }
+  }
+  else{
+    authentication= false;
+  
+  }
+  res.render("isteadyPro3",{usr: usr,authentication: authentication});
+});
+
+router.get("/Mobplus",(req,res)=>{
+
+  let usr= {};
+  let authentication= false;
+  if(req.isAuthenticated()){
+  
+    usr= req.user;
+    if(usr.confirmed){
+      authentication= true;
+    }
+    else{
+      authentication= false;
+    }
+  }
+  else{
+    authentication= false;
+  
+  }
+  res.render("iSteadyMobilePlus",{usr: usr,authentication: authentication});
+});
+
+router.get("/Multi",(req,res)=>{
+
+  let usr= {};
+  let authentication= false;
+  if(req.isAuthenticated()){
+  
+    usr= req.user;
+    if(usr.confirmed){
+      authentication= true;
+    }
+    else{
+      authentication= false;
+    }
+  }
+  else{
+    authentication= false;
+  
+  }
+  res.render("iSteadyMulti",{usr: usr,authentication: authentication});
+});
+
+router.get("/Gear",(req,res)=>{
+
+  let usr= {};
+  let authentication= false;
+  if(req.isAuthenticated()){
+  
+    usr= req.user;
+    if(usr.confirmed){
+      authentication= true;
+    }
+    else{
+      authentication= false;
+    }
+  }
+  else{
+    authentication= false;
+  
+  }
+  res.render("iSteadyGear",{usr: usr,authentication: authentication});
+});
+
+
+
 router.get("/PrivacyPolicy",(req,res)=>{
 
   let usr= {};
@@ -165,11 +273,10 @@ router.post("/contact",(req,res)=>{
   var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'StoreHimster@gmail.com',
-    pass: 'storehimster786'
+    user: 'storehimster@gmail.com',
+    pass: 'Storehimster@786'
   }
 });
-
 
 
 var mailOptions = {
