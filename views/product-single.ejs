@@ -39,6 +39,10 @@
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
   <style>
+	a .btn .btn-medium .btn-solid-border{
+		margin:5px 0px 5px;
+	}
+
   .single-product-details .color-swatches {
   	    margin-top: 10px!important;
   }
@@ -449,7 +453,7 @@ p{margin:0;}
 <!-- Start Top Header Bar -->
 <%- include('partials/header') %>
 
-<section class="single-product">
+<section class="single-product" style="padding: 60px 0 0px;">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
@@ -574,6 +578,9 @@ p{margin:0;}
 						<% }else{ %>
 						<ul>
 							<li>
+								<a href="/products/Himster Wireless Doorbell (White 1 Transmitter & 1 Receiver)" class="swatch-white"></a>
+							</li>
+							<li>
 								<a href="/products/Himster Wireless Doorbell (Black 1 Transmitter & 1 Receiver)" class="swatch-black"></a>
 							</li>
 						</ul>
@@ -581,22 +588,26 @@ p{margin:0;}
 
 					</div>
 					 <div>
-						<% if(foundproduct.prod_title == 'Himster Wireless Doorbell (White 1 Transmitter & 1 Receiver)'){ %>
-						<!-- <span><h5>SET</h5></span>
-						<ul>
-							<a href="/products/Hohem iSteady Gear (Z Kit)/" class="btn btn-main">Gear Z kit</a>
-							<a href="/products/Hohem iSteady Gear" class="btn btn-medium btn-solid-border">Gear </a>
-						</ul> -->
+						<% if(foundproduct.prod_title == 'Himster Wireless Doorbell (White 1 Transmitter & 1 Receiver)' || foundproduct.prod_title == 'Himster Wireless Doorbell (White 1 Transmitter & 2 Receivers)' || foundproduct.prod_title == 'Himster Wireless Doorbell (White 2 Transmitters & 1 Receiver)' || foundproduct.prod_title == 'Himster Wireless Doorbell (White 2 Transmitters & 3 Receivers)' || foundproduct.prod_title == 'Himster Wireless Doorbell (White 2 Transmitters & 4 Receivers)'){ %>
+						 <span><h5>SET</h5></span>
+						 <ul>
+							<a href="/products/Himster Wireless Doorbell (White 1 Transmitter & 1 Receiver)" class="btn btn-medium btn-solid-border">White 1 Transmitter & 1 Receiver</a> 
+							<a href="/products/Himster Wireless Doorbell (White 1 Transmitter & 2 Receivers)" class="btn btn-medium btn-solid-border">White 1 Transmitter & 2 Receivers </a>
+							<a href="/products/Himster Wireless Doorbell (White 2 Transmitters & 1 Receiver)" class="btn btn-medium btn-solid-border">White 2 Transmitters & 1 Receiver </a>
+							<a href="/products/Himster Wireless Doorbell (White 2 Transmitters & 3 Receivers)" class="btn btn-medium btn-solid-border">White 2 Transmitters & 3 Receivers </a>
+							<a href="/products/Himster Wireless Doorbell (White 2 Transmitters & 4 Receivers)" class="btn btn-medium btn-solid-border">White 2 Transmitters & 4 Receivers </a>
+						</ul>
 						<% } %>	
-						<% if(foundproduct.prod_title == 'Himster Wireless Doorbell (Black 1 Transmitter & 1 Receiver)'){ %>
-						<!-- <span><h5>SET</h5></span>
+						
+						<% if(foundproduct.prod_title == 'Himster Wireless Doorbell (Black 1 Transmitter & 1 Receiver)' || foundproduct.prod_title == 'Himster Wireless Doorbell (Black 1 Transmitter & 2 Receivers)' || foundproduct.prod_title == 'Himster Wireless Doorbell (Black 2 Transmitters & 1 Receiver)' || foundproduct.prod_title == 'Himster Wireless Doorbell (Black 2 Transmitters & 3 Receivers)' || foundproduct.prod_title == 'Himster Wireless Doorbell (Black 2 Transmitters & 4 Receivers)'){ %>
+						 <span><h5>SET</h5></span>
 						<ul>
-							<a href="/products/Hohem iSteady Gear (Z Kit)" class="btn btn-medium btn-solid-border">Black 1 Transmitter & 1 Receiver</a> 
-							<a href="/products/Hohem iSteady Gear" class="btn btn-main ">Black 1 Transmitter & 2 Receivers </a>
-							<a href="/products/Hohem iSteady Gear" class="btn btn-main ">Black 2 Transmitter & 1 Receiver </a>
-							<a href="/products/Hohem iSteady Gear" class="btn btn-main ">Black 2 Transmitter & 3 Receivers </a>
-							<a href="/products/Hohem iSteady Gear" class="btn btn-main ">Black 2 Transmitter & 4 Receivers </a>
-						</ul> -->
+							<a href="/products/Himster Wireless Doorbell (Black 1 Transmitter & 1 Receiver)" class="btn btn-medium btn-solid-border">Black 1 Transmitter & 1 Receiver</a> 
+							<a href="/products/Himster Wireless Doorbell (Black 1 Transmitter & 2 Receivers)" class="btn btn-medium btn-solid-border">Black 1 Transmitter & 2 Receivers </a>
+							<a href="/products/Himster Wireless Doorbell (Black 2 Transmitters & 1 Receiver)" class="btn btn-medium btn-solid-border">Black 2 Transmitters & 1 Receiver </a>
+							<a href="/products/Himster Wireless Doorbell (Black 2 Transmitters & 3 Receivers)" class="btn btn-medium btn-solid-border">Black 2 Transmitters & 3 Receivers </a>
+							<a href="/products/Himster Wireless Doorbell (Black 2 Transmitters & 4 Receivers)" class="btn btn-medium btn-solid-border">Black 2 Transmitters & 4 Receivers </a>
+						</ul> 
 						<% } %>
 
 					</div> 
@@ -1745,7 +1756,7 @@ p{margin:0;}
 
 
 
-<section class="products section bg-white">
+<section class="products section bg-white" style="padding: 0px;">
 	<div class="container">
 		<div class="row">
 			<div class="title text-center">
