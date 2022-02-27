@@ -109,7 +109,7 @@ $('#simple-timer').syotimer({
             stopAfterLoops:-1,
             stopAtSlide:-1,
             shuffle:'off',
-            autoHeight:'off',
+            autoHeight:'on',
             fullScreenAutoWidth:'off',
             fullScreenAlignForce:'off',
             fullScreenOffsetContainer: '',

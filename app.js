@@ -1099,11 +1099,11 @@ var transporter = nodemailer.createTransport({
 var mailOptions,link;
 
   host=req.get('host');
-  link="https://"+req.get('host')+"/verify?id="+rand+"&gmail="+req.body.username;
+  link="https://himster.in/verify?id="+rand+"&gmail="+req.body.username;
   mailOptions={
     to : req.body.username,
     subject : "Confirm your email address",
-    html : `<h3 style="font-family:sans-serif; ">Welcome to HIMSTER, ${req.body.firstname}.</h3><p style="font-family:sans-serif; ">You're receiving this message because you recently signed up for a Himster account.</p><p style="font-family:sans-serif; ">Confirm your email address by clicking on the button below.This step adds extra security to your account by verifying you own this email.</p><a href="${link}" style="padding: 8px 14px;border:1px solid black;color:white;font-weight:500;background-color: black;text-decoration: none;border-radius:5px;margin-bottom: 15px;">Confirm email</a><br><p style="font-family:sans-serif; border-top: 1px solid black;border-bottom: 1px solid black;padding: 20px 0px;margin: 20px 0px;"> This link will expire in 5 minutes.</p> <small style="float:right;">© 2020 Himster All Rights Reserved.</small>`
+    html : `<h3 style="font-family:sans-serif; ">Welcome to HIMSTER, ${req.body.firstname}.</h3><p style="font-family:sans-serif; ">You're receiving this message because you recently signed up for a Himster account.</p><p style="font-family:sans-serif; ">Confirm your email address by clicking on the button below.This step adds extra security to your account by verifying you own this email.</p><a href="${link}" style="padding: 8px 14px;border:1px solid black;color:white;font-weight:500;background-color: black;text-decoration: none;border-radius:5px;margin-bottom: 15px;">Confirm email</a><br><p style="font-family:sans-serif; border-top: 1px solid black;border-bottom: 1px solid black;padding: 20px 0px;margin: 20px 0px;"> This link will expire in 5 minutes.</p> <small style="float:right;">© 2022 Himster All Rights Reserved.</small>`
   }
   // console.log(mailOptions);
   transporter.sendMail(mailOptions, function(error, response){
@@ -1212,11 +1212,11 @@ app.post("/emailverification",(req,res)=>{
 var mailOptions,link;
 
   host=req.get('host');
-  link="https://"+req.get('host')+"/verify?id="+rand+"&gmail="+req.body.username;
+  link="https://himster.in/verify?id="+rand+"&gmail="+req.body.username;
   mailOptions={
     to : req.body.username,
     subject : "Confirm your email address",
-    html : `<h3 style="font-family:sans-serif; ">Welcome to HIMSTER.</h3><p style="font-family:sans-serif; ">You're receiving this message because you recently signed up for a Himster account.</p><p style="font-family:sans-serif; ">Confirm your email address by clicking on the button below.This step adds extra security to your account by verifying you own this email.</p><a href="${link}" style="padding: 8px 14px;border:1px solid black;color:white;font-weight:500;background-color: black;text-decoration: none;border-radius:5px;margin-bottom: 15px;">Confirm email</a><br><p style="font-family:sans-serif; border-top: 1px solid black;border-bottom: 1px solid black;padding: 20px 0px;margin: 20px 0px;"> This link will expire in 5 minutes.</p> <small style="float:right;">© 2020 Himster All Rights Reserved.</small>`
+    html : `<h3 style="font-family:sans-serif; ">Welcome to HIMSTER.</h3><p style="font-family:sans-serif; ">You're receiving this message because you recently signed up for a Himster account.</p><p style="font-family:sans-serif; ">Confirm your email address by clicking on the button below.This step adds extra security to your account by verifying you own this email.</p><a href="${link}" style="padding: 8px 14px;border:1px solid black;color:white;font-weight:500;background-color: black;text-decoration: none;border-radius:5px;margin-bottom: 15px;">Confirm email</a><br><p style="font-family:sans-serif; border-top: 1px solid black;border-bottom: 1px solid black;padding: 20px 0px;margin: 20px 0px;"> This link will expire in 5 minutes.</p> <small style="float:right;">© 2022 Himster All Rights Reserved.</small>`
   }
   // console.log(mailOptions);
   transporter.sendMail(mailOptions, function(error, response){
@@ -1948,11 +1948,11 @@ app.post("/femailverification",(req,res)=>{
 var mailOptions,link;
 
   host=req.get('host');
-  link="https://"+req.get('host')+"/verification?id="+rand+"&gmail="+req.body.username;
+  link="https://himster.in/verification?id="+rand+"&gmail="+req.body.username;
   mailOptions={
     to : req.body.username,
     subject : "Password reset link",
-    html : `<h3 style="font-family:sans-serif; ">Welcome to HIMSTER.</h3><p style="font-family:sans-serif; ">You're receiving this message because you recently reqested for a reset password for your Himster account.</p><p style="font-family:sans-serif; ">To reset your password click on the button below.</p><a href="${link}" style="padding: 8px 14px;border:1px solid black;color:white;font-weight:500;background-color: black;text-decoration: none;border-radius:5px;margin-bottom: 15px;">Reset Password</a><br><p style="font-family:sans-serif; border-top: 1px solid black;border-bottom: 1px solid black;padding: 20px 0px;margin: 20px 0px;"> This link will expire in 5 minutes.</p> <small style="float:right;">© 2020 Himster All Rights Reserved.</small>`
+    html : `<h3 style="font-family:sans-serif; ">Welcome to HIMSTER.</h3><p style="font-family:sans-serif; ">You're receiving this message because you recently reqested for a reset password for your Himster account.</p><p style="font-family:sans-serif; ">To reset your password click on the button below.</p><a href="${link}" style="padding: 8px 14px;border:1px solid black;color:white;font-weight:500;background-color: black;text-decoration: none;border-radius:5px;margin-bottom: 15px;">Reset Password</a><br><p style="font-family:sans-serif; border-top: 1px solid black;border-bottom: 1px solid black;padding: 20px 0px;margin: 20px 0px;"> This link will expire in 5 minutes.</p> <small style="float:right;">© 2022 Himster All Rights Reserved.</small>`
   }
    console.log(mailOptions);
   transporter.sendMail(mailOptions, function(error, response){
