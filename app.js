@@ -668,11 +668,14 @@ var transporter = nodemailer.createTransport({
   }
 });
 
-
+var maillist = [
+  ''+req.user.email,
+  'rangtechnostore@gmail.com',
+];
 
 var mailOptions = {
   from: 'StoreHimster@gmail.com',
-  to: req.user.email,
+  to: maillist,
   subject: 'Order Successful!!!',
   html: `	<div style="text-align: center;"><img src="https://i.ibb.co/CJhrftz/tick.jpg" alt="SuccessTick" width="50" height="auto" border="0"><h3 style="font-weight: 400;font-family: 'Poppins', sans-serif;margin-top: 12px;margin-bottom: 10px;line-height: 1.1;color: inherit;">Thank you! For your payment</h3><p style=" font-family: 'Poppins' sans-serif;color: inherit;font-size: 15px;margin: 0 0 10px;">Your order has been <b>Successfully </b>placed!!!</p>
             <p style=" font-family: 'Poppins' sans-serif;color: inherit;font-size: 15px;margin: 0 0 10px;">Your Order Id: <b>${req.body.ORDERID}</b></p><b>Please go to the your orders page for more detail on the order.</b></div>`        
