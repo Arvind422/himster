@@ -92,10 +92,10 @@ $('#simple-timer').syotimer({
                 tmp:''
               }
             },
-            responsiveLevels:[1240,1024,778,480],
-            visibilityLevels:[1240,1024,778,480],
-            gridwidth:[1240,1024,778,480],
-            gridheight:[868,768,960,720],
+            responsiveLevels:[1240,1024,778,480,350],
+            visibilityLevels:[1240,1024,778,480,350],
+            gridwidth:[1240,1024,778,480,350],
+            gridheight:[868,768,960,500,300],
             lazyType:'none',
             parallax: {
               type:'scroll',

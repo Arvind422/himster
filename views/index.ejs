@@ -39,12 +39,6 @@
   <link rel="stylesheet" href="css/style.css">
 
 <style>
-.tp-bgimg .defaultimg ,.rev-slidebg{
-	background-size: contain !important;
-	background-position: center !important;
-	background-color: white;
-}
-
 .top-header .search form a i {
     top: 9px!important;
     right: 9px!important;
@@ -240,8 +234,8 @@
     left: auto;}
         
 	.category-box .content {
-    top: 50%;
-    left: 70%;
+    top: 90%;
+    left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
@@ -252,8 +246,8 @@
 	}
 	.category-box img.img03{
 	    margin-top: 0px;
-	height: 100%;
-    width: auto;
+	height: auto;
+    width: 100%;
 	}
 }
 	 @media only screen and (max-width: 400px){
@@ -266,13 +260,13 @@
     }
     .category-box .c02{ 
        top: 25%;
-    left: 45%;
-    width: auto;
+    	left: 50%;
+    	width: fit-content;
 	}
     .category-box .c03{ 
-       top: 15%;
-    left: 45%;
-    width: auto;
+        top: 15%;
+   	 	left: 50%;
+    	width: fit-content;
 	}
 }
 	@media (max-width: 992px){
@@ -728,12 +722,11 @@
 				data-description="">
 					<!-- MAIN IMAGE -->
 					 <img src="doorbell/Corousel/a+0.jpg" 
-					data-bgposition="cover" 
-					data-bgfit="cover" 
+					data-bgposition="center center" 
+					data-bgfit="contain" 
 					data-bgrepeat="no-repeat" 
 					data-bgparallax="on" 
-					class="rev-slidebg" 
-					data-bgsize="contain"
+					class="rev-slidebg"
 					data-bgcolor="white"
 					data-no-retina
 					alt="Slider image" /> 
@@ -756,12 +749,13 @@
 					<!-- MAIN IMAGE -->
 					<img src="doorbell/Corousel/a+1w.jpg" alt=""  
 						data-bgposition="center center"
-						data-bgfit="auto"
-						data-bgsize="contain"
+						data-bgfit="contain"
 						data-bgrepeat="no-repeat"
 						data-bgparallax="on" 
 						data-bgcolor="white"
-						class="rev-slidebg" data-no-retina />
+						class="rev-slidebg" 
+						data-no-retina 
+						alt="Slider image"/>
 					<!-- LAYERS -->
 	
 				</li>
@@ -782,13 +776,13 @@
 					<!-- MAIN IMAGE -->
 					<img src="doorbell/Corousel/a+2.jpg"
 					data-bgposition="center center"
-						data-bgfit="auto"
-						data-bgsize="contain"
+						data-bgfit="contain"
 						data-bgrepeat="no-repeat"
 						data-bgparallax="on" 
 						data-bgcolor="white" 
-					class="rev-slidebg" 
-					data-no-retina  alt="slider img" />
+						class="rev-slidebg" 
+						data-no-retina  
+						alt="slider img" />
 					<!-- LAYERS -->
 				</li>
 
@@ -809,13 +803,13 @@
 					<!-- MAIN IMAGE -->
 					<img src="doorbell/Corousel/a+3w.jpg"
 					data-bgposition="center center"
-						data-bgfit="auto"
-						data-bgsize="contain"
+						data-bgfit="contain"
 						data-bgrepeat="no-repeat"
 						data-bgparallax="on" 
 						data-bgcolor="white"
-					class="rev-slidebg" 
-					data-no-retina  alt="slider img" />
+						class="rev-slidebg" 
+						data-no-retina  
+						alt="slider img" />
 					<!-- LAYERS -->
 
 				</li>
@@ -837,8 +831,7 @@
 					<!-- MAIN IMAGE -->
 					<img src="doorbell/Corousel/a+4.jpg"
 					data-bgposition="center center"
-						data-bgfit="auto"
-						data-bgsize="contain"
+						data-bgfit="contain"
 						data-bgrepeat="no-repeat"
 						data-bgparallax="on" 
 						data-bgcolor="white" 
