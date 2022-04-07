@@ -89,7 +89,7 @@ app.use(multer({storage: storage, fileFilter: fileFilter}).single("myimage"));
 
 
 mongoose.connect("mongodb+srv://anuj:anujtest@cluster0-iher4.mongodb.net/himsterDB",{useNewUrlParser: true, useUnifiedTopology: true});
-//mongoose.connect("mongodb://localhost:27017/himsterDB", {useNewUrlParser: true,useUnifiedTopology: true});
+// mongoose.connect("mongodb://localhost:27017/himsterDB", {useNewUrlParser: true,useUnifiedTopology: true});
 mongoose.set("useCreateIndex", true);
 
 
@@ -3007,6 +3007,9 @@ app.use(require('./routes/main'))
 app.use((req,res,next)=>{
   res.status(404).render(__dirname+ "/views/404");
 })
+
+var server = app.listen();
+server.setTimeout(500000);
 
 app.listen(3000, function() {
   console.log("Server started on port 3000.");

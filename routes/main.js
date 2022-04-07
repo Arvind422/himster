@@ -281,7 +281,7 @@ router.post("/contact",(req,res)=>{
 
 var mailOptions = {
   from: 'StoreHimster@gmail.com',
-  to: 'anujdubey0298@gmail.com',
+  to: 'rangtechnostore@gmail.com',
   subject: req.body.subject,
   html: `<h3>Name : </h3>${req.body.name} <br>${req.body.email} <h3>Message : </h3><p>${req.body.message}</p>`        
 };
