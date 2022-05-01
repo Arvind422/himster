@@ -60,25 +60,23 @@
     <tbody>
 
  <%  for(i in mdata){ %>
-<% if(!(mdata[i].orderComplete) && !(mdata[i].orderCancelled)){ %>
-
- <tr>
+    <% if(!(mdata[i].orderComplete) && !(mdata[i].orderCancelled)){ %>
+      <tr>
       	<td><%= (Number(i)+1) %></td>
+        <td>
+          <form action="/ordercompleted" method="POST">
+            <input type="radio" name="ordercompleted" value="<%= mdata[i].orderid %>" 
+            onchange="this.form.submit()">
+          <span>Delivered</span>
+          </form>
 
-<td>
-    <form action="/ordercompleted" method="POST">
-      <input type="radio" name="ordercompleted" value="<%= mdata[i].orderid %>" 
-      onchange="this.form.submit()">
-    <span>Delivered</span>
-    </form>
+          <form action="/ordercancelled" method="POST">
+            <input type="radio" name="ordercancelled" value="<%= mdata[i].orderid %>" 
+            onchange="this.form.submit()">
+          <span>In transit</span>
+          </form>
 
-    <form action="/ordercancelled" method="POST">
-      <input type="radio" name="ordercancelled" value="<%= mdata[i].orderid %>" 
-      onchange="this.form.submit()">
-    <span>Cancelled</span>
-    </form>
-
-  </td>
+        </td>
         <td><%= mdata[i].currency %></td>
         <td><%= mdata[i].gatewayname %></td>
         <td><%= mdata[i].respmsg %></td>

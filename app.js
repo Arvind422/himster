@@ -62,7 +62,6 @@ app.use('/admin/editproduct/:prodtitle', express.static("public"));
 
 app.use('/admin/editblog/:blogtitle', express.static("public"));
 
-
 app.use('/admin/myproducts', express.static("public"));
 
 app.use('/admin/myblogs', express.static("public"));
@@ -513,7 +512,7 @@ app.get('/auth/facebook/callback',
 //Router for forwarding to paytm 
 app.get('/paywithpaytm', (req, res, next) => {
 let ttl=0;
-// console.log(req.query.id)
+  console.log("owner",req.query.id);
 
     var order = new Order({
         owner: req.query.id
@@ -565,7 +564,7 @@ app.post('/paymentDone', (req, res, next) => {
 
 let userid= '';
 console.log( req.user);
-  // console.log(req.body);
+   console.log("paymentDone order details:",req.body);
     if (req.body.RESPCODE == '01') {
        let merchantdata= {
             currency: req.body.CURRENCY,
@@ -689,9 +688,39 @@ transporter.sendMail(mailOptions, function(error, info){
      res.redirect('/order_confirmation');
   }
 });
-                                                           
+ console.log("Mail sent to user successfully");                                                          
                                                             })
-                                                    })
+                                                    
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'StoreHimster@gmail.com',
+    pass: 'Storehimster@786'
+  }
+});
+
+var maillist1 = [
+  'rangtechnostore@gmail.com',
+];
+
+var mailOptions = {
+  from: 'StoreHimster@gmail.com',
+  to: maillist1,
+  subject: 'Order Successful!!!',
+  html: `	<div style="text-align: center;"><img src="https://i.ibb.co/CJhrftz/tick.jpg" alt="SuccessTick" width="50" height="auto" border="0"><h3 style="font-weight: 400;font-family: 'Poppins', sans-serif;margin-top: 12px;margin-bottom: 10px;line-height: 1.1;color: inherit;">Thank you! For your payment</h3><p style=" font-family: 'Poppins' sans-serif;color: inherit;font-size: 15px;margin: 0 0 10px;">Your order has been <b>Successfully </b>placed!!!</p>
+            <p style=" font-family: 'Poppins' sans-serif;color: inherit;font-size: 15px;margin: 0 0 10px;">Customer Order Id: <b>${req.body.ORDERID}</b></p><br>Customer Details: <b>${req.user}</b></div>`        
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+   
+     res.redirect('/order_confirmation');
+  }
+});
+                                                    
+                                                          })
                                                 })
                                         }).catch(err => next(err))
                                 // })
@@ -820,28 +849,35 @@ app.post("/ordercompleted",(req,res)=>{
 });
 
 app.post("/ordercancelled",(req,res)=>{
-  // console.log(req.body.ordercancelled);
+  // console.log(req.body.ordercancelled); -- -used for in transt update
+  
   Order.updateOne({_id: req.body.ordercancelled},{orderCancelled: true},(err)=>{
-    if(err){
-      // console.log(err)
-      res.render(__dirname+ "/views/wrongpg");
+    if(!err){
+      res.redirect("/admin_orders");
     }
-    else{
-      payment.deleteOne({orderid: req.body.ordercancelled},(err)=>{
-        if(err){
-          // console.log(err);
-          res.render(__dirname+ "/views/wrongpg");
-        }
-        else
-        {
-          // console.log("success");
-          res.redirect("/admin_orders");
-        }
-      });
-
-    }
-
   });
+  
+  // Order.updateOne({_id: req.body.ordercancelled},{orderCancelled: true},(err)=>{
+  //   if(err){
+  //     // console.log(err)
+  //     res.render(__dirname+ "/views/wrongpg");
+  //   }
+  //   else{
+  //     payment.deleteOne({orderid: req.body.ordercancelled},(err)=>{
+  //       if(err){
+  //         // console.log(err);
+  //         res.render(__dirname+ "/views/wrongpg");
+  //       }
+  //       else
+  //       {
+  //         // console.log("success");
+  //         res.redirect("/admin_orders");
+  //       }
+  //     });
+
+  //   }
+
+  // });
 });
 
 
@@ -1091,6 +1127,7 @@ if(req.body.password == req.body.password1){
     
  });
 
+console.log(newUser);
 
 var transporter = nodemailer.createTransport({
     service: "Gmail",
@@ -1353,6 +1390,7 @@ app.post("/add_address",(req,res)=>{
           typeofaddress: req.body.typeofaddress
 
         };
+        console.log("Customer address : ",add);
         address.create(add,(err)=>{
           if(err){
             // console.log(err)
