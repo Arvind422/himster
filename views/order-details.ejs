@@ -280,93 +280,82 @@
               <div class="row mt-30" style="border:1px solid #dedede;padding: 15px;" >
               	<% for(j in item[i].items){ %>
               		<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
-				              			<div class="col-lg-3 col-md-4 col-sm-5 col-xs-5">
-				              				<a><img id="prodimg" width="150" height="150" src="<%= item[i].items[j].img %>" alt="" /></a>
-				              			</div>
-				              			<div class="col-lg-6 col-md-8 col-sm-7 col-xs-7 single-product-details">
-											<a><%= item[i].items[j].name %></a>
-											<br><br>
-											<div class="color-swatches">
-												<span>color:</span>
-												<ul>
-													<li>
-														<a class="swatch-black"></a>
-													</li>
-												</ul>
-											</div>	
-				              			</div>
-				              		</div>
+						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-5">
+							<a><img id="prodimg" width="150" height="150" src="<%= item[i].items[j].img %>" alt="" /></a>
+						</div>
+						<div class="col-lg-6 col-md-8 col-sm-7 col-xs-7 single-product-details">
+							<a><%= item[i].items[j].name %></a>
+							<br><br>
+							<div class="color-swatches">
+								<span>color:</span>
+								<ul>
+									<li>
+										<a class="swatch-black"></a>
+									</li>
+								</ul>
+							</div>	
+						</div>
+					</div>
 
 <% } %>
 
-				              		<div class="col-lg-1 col-md-1 col-sm-1 col-xs-4 mt-20">
-				              			<label for="" class="hid">Price</label> <br>₹<%= item[i].total  %>
-				              		</div>
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-4 mt-20">
+						<label for="" class="hid">Price</label> <br>₹<%= item[i].total  %>
+					</div>
 
-				              		<div class="col-lg-2 col-md-3 col-sm-3 col-xs-8 mt-20 desc">
+					<div class="col-lg-2 col-md-3 col-sm-3 col-xs-8 mt-20 desc">
 
 
-				              			 <% if(item[i].orderComplete == false && item[i].orderCancelled == false){ %>
-  
-                      					<div>
-											<a class="status delivered"></a>
-											<b>Status:- </b><span>Shipped ,On the way!!!</span>	
-										</div>
+					<% if(item[i].orderComplete == false && item[i].orderCancelled == false){ %>
+
+						<div>
+							<a class="status delivered"></a>
+							<b>Status:- </b><span>In Transit</span>	
+						</div>
 										
-                      <% } %>
-                      <% if(item[i].orderComplete == true){ %>
+                    <% } %>
+                    <% if(item[i].orderComplete == true){ %>
   
-
-                     
-
-										<div>
-											<a class="status delivered"></a>
-											<b>Status: </b><span>Delivered</span>	
-										</div>
-										<div>
-											<span> Return window will close after 5 days.</span>
-										</div>
-										<div>
-											               <% if(usr.email){ %>
+					<div>
+						<a class="status delivered"></a>
+						<b>Status: </b><span>Delivered</span>	
+					</div>
+					<div>
+						<span> Return window will close after 5 days.</span>
+					</div>
+					<div>
+						<% if(usr.email){ %>
                         <form action="/prod_ratings" method="POST">
 
-          <input type="hidden" name="img" value="<%= item[i].items[j].img %>">
-          <input type="hidden" name="name" value="<%= item[i].items[j].name %>">
-          <input type="hidden" name="desc" value="<%= item[i].items[j].desc %>">
-          <input type="hidden" name="total" value="<%= item[i].total %>">
-          <input type="hidden" name="fullname" value="<%= usr.fullname %>">
-          <input type="hidden" name="email" value="<%= usr.email %>">
-        
+							<input type="hidden" name="img" value="<%= item[i].items[j].img %>">
+							<input type="hidden" name="name" value="<%= item[i].items[j].name %>">
+							<input type="hidden" name="desc" value="<%= item[i].items[j].desc %>">
+							<input type="hidden" name="total" value="<%= item[i].total %>">
+							<input type="hidden" name="fullname" value="<%= usr.fullname %>">
+							<input type="hidden" name="email" value="<%= usr.email %>">
+			
+							<button type="submit" class="givrating"><i class="tf-ion-ios-star"></i> Rate & Review Product</button>
+						</form>
 
-        
-                              <button type="submit" class="givrating"><i class="tf-ion-ios-star"></i> Rate & Review Product</button>
-                        </form>
+						<% }else{ %>
+						<a href="/update-profile" class="givrating"><i class="tf-ion-ios-star"></i> Rate & Review Product</a>
+						<% } %>
 
-<% }else{ %>
-<a href="/update-profile" class="givrating"><i class="tf-ion-ios-star"></i> Rate & Review Product</a>
-<% } %>
-
- <% } %>
+ 					<% } %>
 
 
-                      <% if(item[i].orderCancelled == true){ %>
+                      <!-- <% if(item[i].orderCancelled == true){ %>
 
+						<div>
+							<a class="status delivered"></a>
+							<b>Status:- </b><span>In transit</span>	
+						</div>
 
-                      					<div>
-											<a class="status delivered"></a>
-											<b>Status:- </b><span>Cancelled</span>	
-										</div>
-  
-                      <% } %>
+                      <% } %> -->
 
-				              			</div>
-				              		</div>	
-
-
-
-
-				              		
-              		
+						</div>
+					</div>	
+	
               	</div>
 
               	<!-- =============== END PRODUCTS===================-->
