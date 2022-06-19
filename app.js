@@ -663,7 +663,7 @@ var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'StoreHimster@gmail.com',
-    pass: 'Storehimster@786'
+    pass: 'lhmbxxsxoolshsrf'
   }
 });
 
@@ -695,7 +695,7 @@ var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'StoreHimster@gmail.com',
-    pass: 'Storehimster@786'
+    pass: 'lhmbxxsxoolshsrf'
   }
 });
 
@@ -1133,7 +1133,7 @@ var transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
         user: "StoreHimster@gmail.com",
-        pass: "Storehimster@786"
+        pass: "lhmbxxsxoolshsrf"
     }
 });
 var mailOptions,link;
@@ -1246,7 +1246,7 @@ app.post("/emailverification",(req,res)=>{
     service: "Gmail",
     auth: {
         user: "StoreHimster@gmail.com",
-        pass: "Storehimster@786"
+        pass: "lhmbxxsxoolshsrf"
     }
 });
 var mailOptions,link;
@@ -1983,7 +1983,7 @@ app.post("/femailverification",(req,res)=>{
     service: "Gmail",
     auth: {
         user: "StoreHimster@gmail.com",
-        pass: "Storehimster@786"
+        pass: "lhmbxxsxoolshsrf"
     }
 });
 var mailOptions,link;
