@@ -117,7 +117,6 @@ button .product-remove:hover{
 <%- include('partials/header') %>
 
 
-
 <section class="page-header">
 	<div class="container" id="scroll">
 		<div class="row">
@@ -157,23 +156,22 @@ button .product-remove:hover{
           <li><a href="/profile-details">Profile</a></li>
           <li><a href="/address">Address</a></li>
           <li><a href="/order">Orders</a></li>
-          <li><a class="active" href="/wishlist">Wishlist</a></li>
-          
+          <li><a class="active" href="/wishlist">Wishlist</a></li>  
         </ul>
         <div class="dashboard-wrapper dashboard-user-profile">
-    <%  if(foundwishlist.length > 0){	%>    	
-      <%  if(foundwishlist){	%>
-        <%	for(i in foundwishlist){ %>
 	      <div class="row">
 	        <div class="col-md-12">
 	          <div class="block">
 	            <div class="product-list">
-	              	
+	        
+					<%  if(foundwishlist.length > 0){	%>    	
+					<%  if(foundwishlist){	%>
+					<%	for(i in foundwishlist){ %>	
+
 	              	<div class="row" style="padding: 15px 0px;">
 	              		<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
 	              			<div class="col-lg-3 col-md-4 col-sm-5 col-xs-5 text-center">
 	              				<img id="cartimg" width="150" height="150" src="<%= foundwishlist[i].img %>" alt="" />
-	              				
 	              			</div>
 	              			<div class="col-lg-6 col-md-8 col-sm-7 col-xs-7">
 								<a href="/products/<%= foundwishlist[i].name %>">
@@ -206,37 +204,35 @@ button .product-remove:hover{
 									
 									<button type="submit" class="btn btn-main pull-right">Add To Cart</button>
 									</form>
-	              		</div>	
-	              		
+	              		</div>		
 	              	</div>
-	           <%   }  %>
-	<%	}  %>
-	              <!-- 	SECOND PRODUCT DIV -->
-<% }else{ %>
 
-		<section class="empty-cart page-wrapper">
-			  <div class="container">
-			    <div class="row">
-			      <div class="col-md-12 ">
-			        <div class="block text-center">
-			        	<i class="tf-ion-ios-heart-outline"></i>
-			          	<h2 class="text-center">Your Wishlist is currently empty.</h2>
-			          	<p>Add some products to your Wishlist.</p>
-			          	<a href="/shop" class="btn btn-main mt-20">Return to shop</a>
-			      </div>
-			    </div>
-			  </div>
-			</section>
+	           		<%   }  %>
+					<%	 }  %>
+	              <!-- 	ELSE  -->
+					<% }else{ %>
 
-<% } %>
+					<section class="empty-cart page-wrapper">
+						<div class="container">
+							<div class="row">
+							<div class="col-md-12 ">
+								<div class="block text-center">
+									<i class="tf-ion-ios-heart-outline"></i>
+									<h2 class="text-center">Your Wishlist is currently empty.</h2>
+									<p>Add some products to your Wishlist.</p>
+									<a href="/shop" class="btn btn-main mt-20">Return to shop</a>
+							</div>
+							</div>
+						</div>
+					</section>
 
+					<% } %>
 
 	              	<!-- =============== END PRODUCTS===================-->
-
 	              	
-	  <%  if(foundwishlist.length > 0){	%> 
+	  				<%  if(foundwishlist.length > 0){	%> 
       
-      <% let ttl = 0;  %>
+      				<% let ttl = 0;  %>
       				<hr>
 	              	<div class="row">
 	              		<div class="col-lg-3 col-md-4 col-sm-4 col-lg-offset-9 col-md-offset-8  col-sm-offset-8">
@@ -247,14 +243,13 @@ button .product-remove:hover{
 	              			 <%	for(i in foundwishlist){ %>
 	              			 <% ttl= ttl + foundwishlist[i].price %>
 	              				
-	                           <%   }  %>
-	                           ₹ <%= ttl %>
+	                         <%   }  %>
+	                    	 ₹ <%= ttl %>
 	              			</div>
-
 	              		</div>	
 	              	</div>
 
-	<%	}  %>
+					<%	}  %>
 	               
 	             
 	            </div>
@@ -264,10 +259,8 @@ button .product-remove:hover{
     	</div><!--  DASHBOARD -->
   	  </div><!--  COL_MD_12 -->
 
-        </div>
-      </div>
-    </div>
-  </div>
+    </div><!-- Row -->
+  </div><!--  Container -->
 </section>
 
 <%- include('partials/footer') %>
