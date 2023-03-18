@@ -13,7 +13,7 @@ const useraddressSchema = new mongoose.Schema ({
   gender: String,
   address: String,
   town: String,
-  district: String,
+  city: String,
   pincode: Number,
   state: String,
   typeofaddress: String

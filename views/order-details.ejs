@@ -236,7 +236,7 @@
               				<li><strong><%= usr.firstname %> <%= usr.lastname %></strong></li>
 	              			<li><%= usr.address %></li>
 	              			<li><%= usr.town %></li>
-	              			<li><%= usr.district %>,<%= usr.town %>,<%= usr.pincode %></li>
+	              			<li><%= usr.city %>,<%= usr.pincode %></li>
 	              			<li><%= usr.state %></li>
               			</ol>
               			
@@ -279,7 +279,7 @@
 				
               <div class="row mt-30" style="border:1px solid #dedede;padding: 15px;" >
               	<% for(j in item[i].items){ %>
-              		<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
+              		<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12" style="margin-bottom: 30px;">
 						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-5">
 							<a><img id="prodimg" width="150" height="150" src="<%= item[i].items[j].img %>" alt="" /></a>
 						</div>
@@ -309,7 +309,7 @@
 					<% if(item[i].orderComplete == false && item[i].orderCancelled == false){ %>
 
 						<div>
-							<a class="status delivered"></a>
+							<a class="status pending"></a>
 							<b>Status:- </b><span>In Transit</span>	
 						</div>
 										

@@ -154,7 +154,7 @@
                 
                       <div class="row mt-30">
                         <% for(j in item[i].items){ %>
-                          <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
+                          <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12" style="margin-bottom: 30px;">
                             <div class="col-lg-3 col-md-4 col-sm-5 col-xs-5 text-center">
                               <a href="/order-details/<%= item[i]._id %>"><img id="cartimg" width="150" height="150" src="<%= item[i].items[j].img %>" alt="" /></a>
 
@@ -166,7 +166,7 @@
                                 <span>color:</span>
                                 <ul>
                                   <li>
-                                    <a class="swatch-cream"></a>
+                                    <a class="swatch-black"></a>
                                   </li>
                                 </ul>
                               </div>  
@@ -184,7 +184,7 @@
                                <% var d = new Date(); %>
                               <% var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; %>
                               <a class="status pending"></a>
-                              <span>Expected Delivery on <% let ordrdt = ((item[i].orderdate).split(" "))[0].split("-") %><%= ordrdt[2] %>
+                              <span>Order PLaced on <% let ordrdt = ((item[i].orderdate).split(" "))[0].split("-") %><%= ordrdt[2] %>
                                 <%= months[(d.getMonth())] %>
 
                               </span>
@@ -195,7 +195,7 @@
                       <% if(item[i].orderComplete == false && item[i].orderCancelled == false){ %>
   
                       <b>Status: </b> 
-                      <span> Shipped , on the way</span>
+                      <span><a href="https://marutiair.com/Doc_Tracking.aspx?No=900369922&Tmp=567337" class="givrating" target="_blank"><u>On the Way, Track Order<u></a></span>
                       <% } %>
                       <% if(item[i].orderComplete == true){ %>
   
@@ -255,7 +255,7 @@
 <% }else{ %>
 <!-- Nothing to Show... -->
 <section class="empty-cart page-wrapper">
-  <div class="container">
+  <div class="container" style="width:auto">
     <div class="row">
       <div class="col-md-12 ">
         <div class="block text-center">
