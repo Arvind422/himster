@@ -184,7 +184,6 @@
                                <% var d = new Date(); %>
                               <% var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; %>
                               <a class="status pending"></a>
-                              <!-- <span>Expected Delivery on <% let ordrdt = ((item[i].orderdate).split(" "))[0].split("-") %><%= ordrdt[2] %> -->
                               <span>Order PLaced on <% let ordrdt = ((item[i].orderdate).split(" "))[0].split("-") %><%= ordrdt[2] %>
                                 <%= months[(d.getMonth())] %>
 
