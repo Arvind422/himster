@@ -165,7 +165,7 @@ button .product-remove:hover{
 	            <div class="product-list">
 	        
 					<%  if(foundwishlist.length > 0){	%>    	
-					<%  if(foundwishlist){	%>
+					<!-- <%  if(foundwishlist){	%> -->
 					<%	for(i in foundwishlist){ %>	
 
 	              	<div class="row" style="padding: 15px 0px;">
@@ -206,14 +206,32 @@ button .product-remove:hover{
 									</form>
 	              		</div>		
 	              	</div>
+					<%	 }  %>  
+					<!-- <%  if(foundwishlist.length > 0){	%>     -->
+					<% let ttl = 0;  %>
+      				<hr>
+	              	<div class="row">
+	              		<div class="col-lg-3 col-md-4 col-sm-4 col-lg-offset-9 col-md-offset-8  col-sm-offset-8">
+	              			<div class="col-md-8 col-sm-7 col-xs-8">
+	              				<label for="">Sub Total</label>
+	              			</div>
+	              			<div class="col-md-4 col-sm-5 col-xs-4">
+	              			 <%	for(i in foundwishlist){ %>
+	              			 <% ttl= ttl + foundwishlist[i].price %>
+	              				
+	                         <%   }  %>
+	                    	 ₹ <%= ttl %>
+	              			</div>
+	              		</div>	
+	              	</div>  
 
-	           		<%   }  %>
-					<%	 }  %>
+	           		<!-- <%   }  %> -->
+					<!-- <%	 }  %> -->
 	              <!-- 	ELSE  -->
 					<% }else{ %>
 
 					<section class="empty-cart page-wrapper">
-						<div class="container">
+						<div class="container" style="width:auto">
 							<div class="row">
 							<div class="col-md-12 ">
 								<div class="block text-center">
@@ -230,7 +248,7 @@ button .product-remove:hover{
 
 	              	<!-- =============== END PRODUCTS===================-->
 	              	
-	  				<%  if(foundwishlist.length > 0){	%> 
+	  				<!-- <%  if(foundwishlist.length > 0){	%> 
       
       				<% let ttl = 0;  %>
       				<hr>
@@ -249,13 +267,13 @@ button .product-remove:hover{
 	              		</div>	
 	              	</div>
 
-					<%	}  %>
+					<%	}  %> -->
 	               
 	             
-	            </div>
-	          </div>
-	        </div>
-	      </div>
+	            </div>   <!--   product-list -->
+	          </div> <!--  Block -->
+	        </div> <!--  Col-md-12 -->
+	      </div> <!--  Row -->
     	</div><!--  DASHBOARD -->
   	  </div><!--  COL_MD_12 -->
 
