@@ -184,6 +184,7 @@
                                <% var d = new Date(); %>
                               <% var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; %>
                               <a class="status pending"></a>
+                              <!-- <span>Expected Delivery on <% let ordrdt = ((item[i].orderdate).split(" "))[0].split("-") %><%= ordrdt[2] %> -->
                               <span>Order PLaced on <% let ordrdt = ((item[i].orderdate).split(" "))[0].split("-") %><%= ordrdt[2] %>
                                 <%= months[(d.getMonth())] %>
 
@@ -195,7 +196,8 @@
                       <% if(item[i].orderComplete == false && item[i].orderCancelled == false){ %>
   
                       <b>Status: </b> 
-                      <span><a href="https://marutiair.com/Doc_Tracking.aspx?No=900369922&Tmp=567337" class="givrating" target="_blank"><u>On the Way, Track Order<u></a></span>
+                      <span> Shipped , on the way</span>
+                      <!-- <span><a href="https://marutiair.com/Doc_Tracking.aspx?No=900369922&Tmp=567337" class="givrating" target="_blank"><u>On the Way, Track Order<u></a></span> -->
                       <% } %>
                       <% if(item[i].orderComplete == true){ %>
   
