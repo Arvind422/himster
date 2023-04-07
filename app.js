@@ -512,7 +512,7 @@ app.get('/auth/facebook/callback',
 //Router for forwarding to paytm 
 app.get('/paywithpaytm', (req, res, next) => {
 let ttl=0;
-  console.log("owner",req.query.id);
+  console.log("Router for forwarding to paytm : owner",req.query.id);
 
     var order = new Order({
         owner: req.query.id
@@ -520,7 +520,7 @@ let ttl=0;
     Cart.findOne({ userId: req.query.id }, (err, cart) => {
         if (err) throw err
         if (!cart) res.redirect('/cart')
-         // console.log(cart.products)
+        console.log("Cart Products : ",cart.products)
         order.items = cart.products
 
       for(i in (order.items)){
@@ -563,7 +563,8 @@ let ttl=0;
 app.post('/paymentDone', (req, res, next) => {
 
 let userid= '';
-console.log( req.user);
+console.log("Req Obj : ",req);
+console.log("Req User : ",req.user);
    console.log("paymentDone order details:",req.body);
     if (req.body.RESPCODE == '01') {
        let merchantdata= {
