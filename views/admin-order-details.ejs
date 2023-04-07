@@ -47,22 +47,21 @@
   
   <b>OrderId:- </b> <%= orderid %>
 <h3>User Details:-</h3>
-<%= fullname %> <br>
-<%= usermail %> <br>
-<%= phone %> <br>
-<%= address %><br>
-<%= typeofaddress %><br>
+<b>Name :- </b><%= fullname %> <br>
+<b>Email-id :- </b><%= usermail %> <br>
+<b>Mobile No :- </b><%= phone %> <br>
+<b>Address :- </b><%= address %><br>
+<b>Add. Type :- </b><%= typeofaddress %><br>
 
 <br>
 <h3>Ordered Product Details:-</h3>
 
 <% for(i in items){ %>
-<img src="<%= items[i].img %>"><br>
-<%= items[i].name %><br>
-<%= items[i].desc %><br>
-<b>Quantity:-</b><%= items[i].quantity %> <br>
-<b>Total:- </b> <%= items[i].ttlprice %> <br>
-
+<img src="<%= items[i].img %>" style = "width: 50%; height: 50%;"><br> 
+<h4><%= items[i].name %></h4>
+<b>Quantity :- </b><%= items[i].quantity %> <br>
+<b>Total :- </b>₹ <%= items[i].ttlprice %> <br>
+<b>Desc :- </b><%= items[i].desc %><br>
 
 <% } %>
 

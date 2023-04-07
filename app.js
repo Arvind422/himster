@@ -2375,7 +2375,7 @@ product.findOne({prod_title: req.params.prodname},(err,foundproduct)=>{
     }
     else
     {
-      // console.log(foundproduct);
+      console.log("2378 line - prod_cat :",foundproduct);
       product.find({prod_cat: foundproduct.prod_cat},(err,relatedproducts)=>{
         if(err){
           // console.log(err);
