@@ -512,7 +512,8 @@ app.get('/auth/facebook/callback',
 //Router for forwarding to paytm 
 app.get('/paywithpaytm', (req, res, next) => {
 let ttl=0;
-  console.log("Router for forwarding to paytm : owner",req.query.id);
+  console.log("515 Router for forwarding to paytm : REQ USER -",req.user);
+  console.log("Router for forwarding to paytm : owner",req.query);
 
     var order = new Order({
         owner: req.query.id
@@ -563,10 +564,13 @@ let ttl=0;
 app.post('/paymentDone', (req, res, next) => {
 
 let userid= '';
-console.log("Req Obj : ",req);
+//console.log("Req Obj : ",req);
 console.log("Req User : ",req.user);
    console.log("paymentDone order details:",req.body);
     if (req.body.RESPCODE == '01') {
+      if (req.body.BANKNAME == 'UPI') {
+        req.body.BANKNAME = 'UPI';
+      }
        let merchantdata= {
             currency: req.body.CURRENCY,
             gatewayname: req.body.GATEWAYNAME,
@@ -581,10 +585,7 @@ console.log("Req User : ",req.user);
             status: req.body.STATUS,
             banktxnid: req.body.BANKTXNID,
             txndate: req.body.TXNDATE
-
-
-
-       };
+      };
        payment.create(merchantdata,(err,data)=>{
         if(err){
           console.log(err);
@@ -602,7 +603,7 @@ console.log("Req User : ",req.user);
             }
             var params = req.body
             userid= order.owner
-            // console.log(userid)
+             console.log("Finding this order - USERID",userid)
             // console.log(order)
             order.transactionID = params.TXNID
             var checkSumHash = params.CHECKSUMHASH
@@ -2375,7 +2376,8 @@ product.findOne({prod_title: req.params.prodname},(err,foundproduct)=>{
     }
     else
     {
-      console.log("2378 line - prod_cat :",foundproduct);
+      //Ignoreable error as NULL when blank page
+      //console.log("2378 line - prod_cat :",foundproduct);
       product.find({prod_cat: foundproduct.prod_cat},(err,relatedproducts)=>{
         if(err){
           // console.log(err);
